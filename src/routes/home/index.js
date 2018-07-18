@@ -5,14 +5,14 @@ import Button from '../../components/Button';
 const Home = () => (
   <div>
     <Button
-      type="primary"
+      type='primary'
       href='/example'
     >
       Zaloguj przez Google
     </Button>
 
     <Button
-      type="secondary"
+      type='secondary'
       href='/example'
     >
       Ignoruj
