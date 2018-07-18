@@ -1,15 +1,18 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
-import WebFont from 'webfontloader';
-
 import Home from '../routes/home';
 
-WebFont.load({
-  custom: {
-    families: ['Gilroy:n1,n3,n5'],
-    urls: ['assets/fonts/fonts.css'],
-  },
-});
+const isBrowser = typeof window !== 'undefined';
+const WebFont = isBrowser ? require('webfontloader') : undefined;
+
+if (isBrowser) {
+  WebFont.load({
+    custom: {
+      families: ['Gilroy:n1,n3,n5'],
+      urls: ['assets/fonts/fonts.css'],
+    },
+  });
+}
 
 export default class App extends Component {
   /** Gets fired when the route changes.
