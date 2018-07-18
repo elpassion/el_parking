@@ -1,10 +1,23 @@
 import { h } from 'preact';
-import style from './style.scss';
+import Button from '../../components/Button';
+// import style from './style.scss';
 
 const Home = () => (
-  <div className={style.home}>
-    <h1>Home</h1>
-    <p>This is the Home component.</p>
+  <div>
+    Home Page Example
+    <Button
+      type="primary"
+      href='/example'
+    >
+      Zaloguj przez Google
+    </Button>
+
+    <Button
+      type="secondary"
+      href='/example'
+    >
+      Ignoruj
+    </Button>
   </div>
 );
 
