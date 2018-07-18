@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import Home from '../routes/home';
+import Example from '../routes/example';
 
 const isBrowser = typeof window !== 'undefined';
 const WebFont = isBrowser ? require('webfontloader') : undefined;
@@ -28,6 +29,7 @@ export default class App extends Component {
       <div id='app'>
         <Router onChange={this.handleRoute}>
           <Home path='/' />
+          <Example path='/example' />
         </Router>
       </div>
     );

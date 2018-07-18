@@ -5,17 +5,17 @@
 
 html,
 body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: $darkblue;
-  color: $white;
+  overflow-x: hidden;
   font-family: $font-stack;
   font-size: $font-size;
   font-weight: $light;
-  overflow-x: hidden;
+  color: $white;
+  background: $darkblue;
 }
