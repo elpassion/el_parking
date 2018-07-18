@@ -25,9 +25,9 @@
         "ignoreTemplateLiterals": true
       }
     ],
-    jsx-quotes: ["error", "prefer-single"],
+    "jsx-quotes": ["error", "prefer-single"],
     "semi": ["error", "always"],
-    "comma-dangle": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
     "indent": 0,
     "no-unused-vars": 0,
     "react/display-name": 0,

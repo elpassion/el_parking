@@ -1,4 +1,4 @@
-import { h, render, } from 'preact';
+import { h, render } from 'preact';
 // This is the entry file, which kicks off all rendering.
 //
 // We import h() here because that's the function our JSX elements transpile to.
