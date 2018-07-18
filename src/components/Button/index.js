@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import { Link } from 'preact-router/match';
 import classNames from 'classnames';
 
@@ -17,7 +17,3 @@ export default ({
     </Link>
   );
 };
-
-
-
-

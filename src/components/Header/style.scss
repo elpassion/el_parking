@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+
+  &__date {
+    align-self: center;
+  }
+
+  &__action {
+    margin: 0 0 0 auto;
+  }
+
+  &__today {
+    margin: 0 0 0 4px;
+  }
+
+  /* Themes */
+  &--dark {
+    & .header__today {
+      color: $cornflowerblue;
+    }
+  }
+
+  &--light {
+    & .header__date  {
+      color: $lightgray;
+    }
+  }
+}

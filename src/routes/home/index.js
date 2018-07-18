@@ -4,7 +4,6 @@ import Button from '../../components/Button';
 
 const Home = () => (
   <div>
-    Home Page Example
     <Button
       type="primary"
       href='/example'

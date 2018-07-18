@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import Home from '../routes/home';
+import Header from './Header';
 import Example from '../routes/example';
 
 const isBrowser = typeof window !== 'undefined';
@@ -27,6 +28,7 @@ export default class App extends Component {
   render() {
     return (
       <div id='app'>
+        <Header className='sth' theme='dark' />
         <Router onChange={this.handleRoute}>
           <Home path='/' />
           <Example path='/example' />
