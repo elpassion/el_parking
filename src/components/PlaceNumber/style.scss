@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1.25rem 1.5rem;
+  font-size: 5.75rem;
+  line-height: 5.75rem;
+  color: $white;
+  background-color: $deepblue;
+  border-radius: 5px;
+
+  &.empty {
+    background-color: transparent;
+    border: 1px solid $emptywhite;
+  }
+
+  &.disabled {
+    color: $cornflowerblue;
+    background-color: rgba($cornflowerblue, .2);
+
+    * {
+      opacity: .2;
+    }
+  }
+}
