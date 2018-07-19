@@ -1,6 +1,5 @@
 import { h } from 'preact';
 import Button from '../../components/Button';
-// import style from './style.scss';
 
 const Home = () => (
   <div>

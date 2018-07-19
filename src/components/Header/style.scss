@@ -1,27 +1,27 @@
 .header {
   display: flex;
 
-  &__date {
+  .header-date {
     align-self: center;
+
+    .date-today {
+      margin: 0 0 0 4px;
+    }
   }
 
-  &__action {
+  .header-action {
     margin: 0 0 0 auto;
   }
 
-  &__today {
-    margin: 0 0 0 4px;
-  }
-
   /* Themes */
-  &--dark {
-    & .header__today {
+  &.header-dark {
+    .date-today {
       color: $cornflowerblue;
     }
   }
 
-  &--light {
-    & .header__date  {
+  &.header-light {
+    .header-date  {
       color: $lightgray;
     }
   }

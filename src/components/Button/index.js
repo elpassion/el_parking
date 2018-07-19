@@ -10,7 +10,7 @@ export default ({
   href,
   children,
 }) => {
-  const buttonClass = classNames(style.button, className, style[`button--${type}`]);
+  const buttonClass = classNames(style.button, className, style[`${type}`]);
   return (
     <Link className={buttonClass} href={href}>
       {children}

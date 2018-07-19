@@ -1,16 +1,11 @@
-/* Import Variables and Helpers */
-// @import '../../style/helpers';
-
 /* Local Variables */
 $BUTTON_HEIGHT: 60px !default;
-$BUTTON_WIDTH: 280px !default;
 $BUTTON_RADIUS: 5px !default;
 
 .button {
   display: block;
   margin: 0 auto;
   width: 100%;
-  max-width: $BUTTON_WIDTH;
   height: $BUTTON_HEIGHT;
   line-height: $BUTTON_HEIGHT;
   border-radius: $BUTTON_RADIUS;
@@ -21,12 +16,12 @@ $BUTTON_RADIUS: 5px !default;
     margin-bottom: remcalc(16);
   }
 
-  &--primary {
+  &.primary {
     color: $white;
     background: $robinblue;
   }
 
-  &--secondary {
+  &.secondary {
     color: $robinblue;
     background: transparent;
   }

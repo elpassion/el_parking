@@ -9,19 +9,19 @@ export default class Header extends Component {
   render() {
     const { className, theme } = this.props;
     const today = new Date();
-    const headerClass = classNames(className, style.header, style[`header--${theme}`]);
+    const headerClass = classNames(className, style.header, style[`header-${theme}`]);
 
     return (
       <header className={headerClass}>
-        <div className={style.header__date}>
+        <div className={style['header-date']}>
           <span>
             Dziś
           </span>
-          <time className={style.header__today} dateTime={today}>
+          <time className={style['date-today']} dateTime={today}>
             {format(today, 'DD.MM.YYYY')}
           </time>
         </div>
-        <div className={style.header__action}>
+        <div className={style['header-action']}>
           <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'>
             <g fill={theme === 'dark' ? '#fff' : '#2f22c5'} fillRule='evenodd'>
               <path

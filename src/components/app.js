@@ -28,7 +28,7 @@ export default class App extends Component {
   render() {
     return (
       <div id='app'>
-        <Header className='sth' theme='dark' />
+        <Header theme='dark' />
         <Router onChange={this.handleRoute}>
           <Home path='/' />
           <Example path='/example' />
