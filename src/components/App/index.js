@@ -1,11 +1,12 @@
 import { h, Component } from 'preact';
-import { Router } from 'preact-router';
-import { inject } from 'mobx-react';
+import { Router, getCurrentUrl } from 'preact-router';
+import { inject, observer } from 'mobx-react';
 import Home from '../../routes/home';
 import Header from '../Header';
 import Wrapper from '../Wrapper';
 import Example from '../../routes/example';
 import ProtectedRoute from '../ProtectedRoute';
+import routeMap from '../../utils/routeMap';
 
 const isBrowser = typeof window !== 'undefined';
 const WebFont = isBrowser ? require('webfontloader') : undefined;
@@ -20,21 +21,31 @@ if (isBrowser) {
 }
 
 @inject('authStore')
+@observer
 export default class App extends Component {
   /** Gets fired when the route changes.
    *  @param {Object} event    "change" event from [preact-router](http://git.io/preact-router)
    *  @param {string} event.url  The newly routed URL
    */
+  constructor(props) {
+    super(props);
+
+    const { authStore: { changeRoute } } = this.props;
+    changeRoute(getCurrentUrl(this));
+  }
+
 
   handleRoute = (event) => {
-    this.currentUrl = event.url;
+    const { authStore: { changeRoute } } = this.props;
+    changeRoute(event.url);
   };
 
   render() {
-    const { authStore: { isAuthenticated } } = this.props;
+    const { authStore: { currentRoute } } = this.props;
+
     return (
       <Wrapper id='app'>
-        <Header theme='dark' />
+        {currentRoute !== routeMap.home && <Header theme='dark' />}
         <Router onChange={this.handleRoute}>
           <Home path='/' />
           <ProtectedRoute
@@ -43,6 +54,7 @@ export default class App extends Component {
           />
           <Home default />
         </Router>
+
       </Wrapper>
     );
   }

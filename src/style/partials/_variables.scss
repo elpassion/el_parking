@@ -8,13 +8,14 @@ $white: #fff !default;
 $cornflowerblue: #7f7dff !default;
 $robinblue: #00c5c5 !default;
 $deepblue: #1e0381 !default;
+$gray: #d8d8d8 !default;
 
 // Base for Alpha opacity text
 $butterflybush: #57528f !default;
 
 /* Alpha Opacity Colors */
 $lightgray: rgba($butterflybush, .5) !default;
-$emptywhite: rgba($white, .2);
+$emptywhite: rgba($white, .2) !default;
 
 /* FONT STACK AND SIZES */
 // Stack
