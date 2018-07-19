@@ -8,6 +8,8 @@ import Example from '../../routes/example';
 import ProtectedRoute from '../ProtectedRoute';
 import routeMap from '../../utils/routeMap';
 
+import style from '../Wrapper/style.scss';
+
 const isBrowser = typeof window !== 'undefined';
 const WebFont = isBrowser ? require('webfontloader') : undefined;
 
@@ -44,7 +46,7 @@ export default class App extends Component {
     const { authStore: { currentRoute } } = this.props;
 
     return (
-      <Wrapper id='app'>
+      <Wrapper className={currentRoute === routeMap.home ? style.isHome : ''} id='app'>
         {currentRoute !== routeMap.home && <Header theme='Dark' />}
         <Router onChange={this.handleRoute}>
           <Home path='/' />
