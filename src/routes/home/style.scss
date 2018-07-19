@@ -8,19 +8,28 @@
 // Common styles for both images
 .backCar,
 .frontCar {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 260px;
+
   &:before,
   &:after {
     content: '';
+    position: absolute;
     display: block;
     height: 1px;
-    position: absolute;
     background: $gray;
+    opacity: .2;
+    transform: rotate(31deg);
   }
 }
 
 // Car Lines
 .backCar {
   &:before {
-    width: 200vh;
+    width: 600px;
+    top: -125px;
+    left: -315px;
   }
 }

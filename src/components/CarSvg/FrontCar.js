@@ -5,11 +5,11 @@ import style from './style.scss';
 export default ({
   className,
 }) => {
-  const svgClasses = classNames(style.splashImage, className);
+  const containerClasses = classNames(style.svgWrapper, className);
   return (
-    <div className='svg-wrapper'>
+    <div className={containerClasses}>
       <svg
-        className={svgClasses}
+        className={style.splashImage}
         width='254'
         height='190'
         xmlns='http://www.w3.org/2000/svg'
