@@ -7,6 +7,8 @@ import Wrapper from './Wrapper';
 import Example from '../routes/example';
 import ProtectedRoute from './ProtectedRoute';
 
+import style from './style.scss';
+
 const isBrowser = typeof window !== 'undefined';
 const WebFont = isBrowser ? require('webfontloader') : undefined;
 
@@ -27,7 +29,6 @@ export default class App extends Component {
    */
   handleRoute = (event) => {
     this.currentUrl = event.url;
-    return event.url;
   };
 
   render() {
