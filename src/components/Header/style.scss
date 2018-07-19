@@ -1,8 +1,10 @@
 .header {
   display: flex;
+  margin: 0 0 20px;
 
   .header-date {
     align-self: center;
+    letter-spacing: .8px;
 
     .date-today {
       margin: 0 0 0 4px;
