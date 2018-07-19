@@ -1,13 +1,11 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { inject } from 'mobx-react';
-import Home from '../routes/home';
-import Header from './Header';
-import Wrapper from './Wrapper';
-import Example from '../routes/example';
-import ProtectedRoute from './ProtectedRoute';
-
-import style from './style.scss';
+import Home from '../../routes/home';
+import Header from '../Header';
+import Wrapper from '../Wrapper';
+import Example from '../../routes/example';
+import ProtectedRoute from '../ProtectedRoute';
 
 const isBrowser = typeof window !== 'undefined';
 const WebFont = isBrowser ? require('webfontloader') : undefined;
@@ -27,13 +25,13 @@ export default class App extends Component {
    *  @param {Object} event    "change" event from [preact-router](http://git.io/preact-router)
    *  @param {string} event.url  The newly routed URL
    */
+
   handleRoute = (event) => {
     this.currentUrl = event.url;
   };
 
   render() {
     const { authStore: { isAuthenticated } } = this.props;
-
     return (
       <Wrapper id='app'>
         <Header theme='dark' />

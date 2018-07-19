@@ -7,14 +7,7 @@ const Home = () => (
       type='primary'
       href='/example'
     >
-      Zaloguj przez Google
-    </Button>
-
-    <Button
-      type='secondary'
-      href='/example'
-    >
-      Ignoruj
+      Zaloguj przez Google!
     </Button>
   </div>
 );
