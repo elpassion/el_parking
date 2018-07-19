@@ -1,14 +1,14 @@
 import { h } from 'preact';
 import classNames from 'classnames';
 
-import style from './style.scss';
+import wrapperStyle from './style.scss';
 
 export default ({
   className,
   children,
   id,
 }) => {
-  const wrapperClasses = classNames(style.wrapper, className);
+  const wrapperClasses = classNames(wrapperStyle.wrapper, className);
   return (
     <div className={wrapperClasses} id={id}>
       {children}
