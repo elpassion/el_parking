@@ -45,7 +45,7 @@ export default class App extends Component {
 
     return (
       <Wrapper id='app'>
-        {currentRoute !== routeMap.home && <Header theme='dark' />}
+        {currentRoute !== routeMap.home && <Header theme='Dark' />}
         <Router onChange={this.handleRoute}>
           <Home path='/' />
           <ProtectedRoute

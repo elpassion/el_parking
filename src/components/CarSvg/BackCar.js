@@ -5,10 +5,10 @@ import style from './style.scss';
 export default ({
   className,
 }) => {
-  const svgClasses = classNames(style['splash-image'], className);
+  const containerClasses = classNames(style.svgWrapper, className);
   return (
-    <div className='svg-wrapper'>
-      <svg className={svgClasses} width='216' height='175' xmlns='http://www.w3.org/2000/svg'>
+    <div className={containerClasses}>
+      <svg className={style.splashImage} width='216' height='175' xmlns='http://www.w3.org/2000/svg'>
         <g fill='none' fillRule='evenodd'>
           <path fill='#1C00A8' d='M143.22 152.934l.022 13.577 62.964-36.531-.022-13.577z' />
           <path fill='#1C00A8' d='M0 83.66l143.11 82.931.238-16.299L0 66.882z' />

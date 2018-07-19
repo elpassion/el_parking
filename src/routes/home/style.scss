@@ -1,20 +1,26 @@
-.splash-wrapper {
+.splashWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-// Additional Elements for Cars (lines etc.)
-.back-car {
-  &:before {
+// Common styles for both images
+.backCar,
+.frontCar {
+  &:before,
+  &:after {
     content: '';
     display: block;
-    width: 200px;
-    height: 200px;
+    height: 1px;
     position: absolute;
-    top: 0;
-    left: 0;
-    background: red;
+    background: $gray;
+  }
+}
+
+// Car Lines
+.backCar {
+  &:before {
+    width: 200vh;
   }
 }

@@ -5,7 +5,7 @@ import style from './style.scss';
 export default ({
   className,
 }) => {
-  const svgClasses = classNames(style['splash-image'], className);
+  const svgClasses = classNames(style.splashImage, className);
   return (
     <div className='svg-wrapper'>
       <svg

@@ -2,28 +2,28 @@
   display: flex;
   margin: 0 0 20px;
 
-  .header-date {
+  .headerDate {
     align-self: center;
     letter-spacing: .8px;
 
-    .date-today {
+    .dateToday {
       margin: 0 0 0 4px;
     }
   }
 
-  .header-action {
+  .headerAction {
     margin: 0 0 0 auto;
   }
 
   /* Themes */
-  &.header-dark {
-    .date-today {
+  &.isDark {
+    .dateToday {
       color: $cornflowerblue;
     }
   }
 
-  &.header-light {
-    .header-date  {
+  &.isLight {
+    .headerDate  {
       color: $lightgray;
     }
   }

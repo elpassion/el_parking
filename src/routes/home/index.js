@@ -8,10 +8,10 @@ import Logotype from '../../components/EpLogotype';
 import style from './style.scss';
 
 const Home = () => (
-  <div className={style['splash-wrapper']}>
-    <div className={style['splash-image-container']}>
-      <BackCar className={style['back-car']} />
-      <FrontCar className='sth2' />
+  <div className={style.splashWrapperr}>
+    <div>
+      <BackCar className={style.backCar} />
+      <FrontCar className={style.frontCar} />
       <Logotype />
     </div>
     <Button
