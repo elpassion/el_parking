@@ -1,11 +1,11 @@
 {
-  "name": "cli_parking",
-  "short_name": "cli_parking",
+  "name": "EL Parking",
+  "short_name": "EL Parking",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "background_color": "#2A00AC",
+  "theme_color": "#2A00AC",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",

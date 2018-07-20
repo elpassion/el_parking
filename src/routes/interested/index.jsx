@@ -2,6 +2,8 @@ import Heading from '../../components/Heading';
 
 import style from './style.scss';
 
+
+
 const Interested = () => (
   <div className={style.content}>
     <Heading>
