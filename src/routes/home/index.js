@@ -8,14 +8,15 @@ import style from './style.scss';
 
 const Home = () => (
   <div className={style.splashWrapper}>
-    <div>
+    <div className={style.splashImage}>
       <BackCar className={style.backCar} />
       <FrontCar className={style.frontCar} />
       <ElPassionLogo />
     </div>
     <Button
       Primary
-      href={routeMap.example}
+      href={routeMap.interested}
+      className={style.highOrder}
     >
       Zaloguj przez Google
     </Button>

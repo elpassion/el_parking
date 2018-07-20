@@ -18,7 +18,10 @@ export default ({
   );
 
   const today = new Date();
-  const headerClass = classNames(className, style.header, { [style.isDark]: Dark, [style.isLight]: Light });
+  const headerClass = classNames(className, style.header, {
+      [style.isDark]: Dark,
+      [style.isLight]: Light,
+  });
 
   return (
     <header className={headerClass}>

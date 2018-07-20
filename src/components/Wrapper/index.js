@@ -8,9 +8,12 @@ export default ({
   id,
 }) => {
   const wrapperClasses = classNames(wrapperStyle.wrapper, className);
+  const containerClasses = classNames(wrapperStyle.container, className);
   return (
     <div className={wrapperClasses} id={id}>
-      {children}
+      <div className={containerClasses}>
+        {children}
+      </div>
     </div>
   );
 };

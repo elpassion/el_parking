@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 import Home from '../../routes/home';
 import Header from '../Header';
 import Wrapper from '../Wrapper';
-import Example from '../../routes/example';
+import Interested from '../../routes/interested';
 import ProtectedRoute from '../ProtectedRoute';
 import routeMap from '../../utils/routeMap';
 
@@ -50,8 +50,8 @@ export default class App extends Component {
         <Router onChange={this.handleRoute}>
           <Home path={routeMap.home} />
           <ProtectedRoute
-            path={routeMap.example}
-            component={Example}
+            path={routeMap.interested}
+            component={Interested}
           />
           <Home default />
         </Router>

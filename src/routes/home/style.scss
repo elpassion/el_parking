@@ -1,8 +1,24 @@
+$LINE_MAX_WIDTH: 768px;
+
 .splashWrapper {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: space-around;
+}
+
+.splashImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
+  margin: 0 auto 2vh;
+  z-index: $z-zero;
+}
+
+// higher z-index for button
+.highOrder {
+  z-index: $z-default;
 }
 
 // Common styles for both images
@@ -28,8 +44,30 @@
 // Car Lines
 .backCar {
   &:before {
-    width: 600px;
-    top: -125px;
-    left: -315px;
+    width: $LINE_MAX_WIDTH;
+    top: -165px;
+    left: -470px;
+  }
+
+  &:after {
+    width: $LINE_MAX_WIDTH;
+    bottom: 0;
+    left: -240px;
+  }
+}
+
+.frontCar {
+  margin-bottom: 3vh;
+
+  &:before {
+    width: $LINE_MAX_WIDTH;
+    bottom: -160px;
+    left: 30px;
+  }
+
+  &:after {
+    width: $LINE_MAX_WIDTH;
+    bottom: -160px;
+    left: -280px;
   }
 }
