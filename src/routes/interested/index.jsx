@@ -1,7 +1,7 @@
 import Heading from '../../components/Heading';
 
 const Interested = () => (
-  <div className='interested-wrapper'>
+  <div>
     <Heading>
       Zwolniło się miejsce:
     </Heading>
