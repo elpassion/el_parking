@@ -1,7 +1,9 @@
 import Heading from '../../components/Heading';
 
+import style from './style.scss';
+
 const Interested = () => (
-  <div>
+  <div className={style.content}>
     <Heading>
       Zwolniło się miejsce:
     </Heading>

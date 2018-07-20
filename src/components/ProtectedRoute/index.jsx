@@ -2,8 +2,6 @@ import { Component } from 'preact';
 import { route } from 'preact-router';
 import { inject } from 'mobx-react';
 
-import style from './style.scss';
-
 @inject('authStore')
 export default class App extends Component {
   componentWillMount() {
@@ -12,11 +10,9 @@ export default class App extends Component {
     if (!isAuthenticated) route(redirectPath || '/');
   }
 
-  render({
-    component: Route, ...props
-  }) {
+  render({ component: Route, ...props }) {
     const { authStore: { isAuthenticated } } = this.props;
 
-    return <div className={style.content}>{ isAuthenticated && <Route {...props} /> }</div>;
+    return isAuthenticated && <Route {...props} />;
   }
 }
