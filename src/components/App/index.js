@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 import Home from '../../routes/home';
 import Header from '../Header';
 import Wrapper from '../Wrapper';
-import Interested from '../../routes/interested';
+import Interested from '../../routes/interested/index';
 import ProtectedRoute from '../ProtectedRoute';
 import routeMap from '../../utils/routeMap';
 
@@ -22,7 +22,7 @@ if (isBrowser) {
   });
 }
 
-@inject('authStore')
+@inject('appStore')
 @observer
 export default class App extends Component {
   /** Gets fired when the route changes.
@@ -32,17 +32,17 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    const { authStore: { changeRoute } } = this.props;
+    const { appStore: { changeRoute } } = this.props;
     changeRoute(getCurrentUrl(this));
   }
 
   handleRoute = (event) => {
-    const { authStore: { changeRoute } } = this.props;
+    const { appStore: { changeRoute } } = this.props;
     changeRoute(event.url);
   };
 
   render() {
-    const { authStore: { currentRoute } } = this.props;
+    const { appStore: { currentRoute } } = this.props;
 
     return (
       <Wrapper className={currentRoute === routeMap.home ? style.isHome : null} id='app'>

@@ -4,16 +4,15 @@ import style from './style.scss';
 const cx = classnames.bind(style);
 
 export default ({
-  number, empty, disabled, className,
+  number, reserved, disabled, className,
 }) => {
-  const numberClasses = cx({
-    wrapper: true,
-    empty,
+  const numberClasses = cx(style.wrapper, {
+    reserved,
     disabled,
   });
 
   return (
     <div className={classnames(className, numberClasses)}>
-      <span>{number}</span>
+      {number}
     </div>);
 };

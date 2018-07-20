@@ -9,11 +9,18 @@ export default ({
   className,
   href,
   children,
+  onClick,
 }) => {
   const buttonClass = classNames(style.button, className, { [style.primary]: Primary, [style.secondary]: Secondary });
   return (
-    <Link className={buttonClass} href={href}>
-      {children}
-    </Link>
+    onClick ? (
+      <a className={buttonClass} onClick={onClick} href={href}>
+        {children}
+      </a>
+    ) : (
+      <Link className={buttonClass} href={href}>
+        {children}
+      </Link>
+    )
   );
 };

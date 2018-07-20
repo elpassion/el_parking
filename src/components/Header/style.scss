@@ -1,14 +1,17 @@
+$HEADER_MAX_SIZE: 84 !default;
+
 .header {
   display: flex;
-  flex: 0 1 84px;
-  margin: 0 0 12px;
+  flex: 0 1 remcalc($HEADER_MAX_SIZE);
+  margin: 0 0 remcalc($HEADER_MAX_SIZE / 6);
+  font-size: remcalc(17);
 
   .headerDate {
     line-height: 1.9;
-    letter-spacing: .8px;
+    letter-spacing: remcalc(.8);
 
     .dateToday {
-      margin: 0 0 0 4px;
+      margin: 0 0 0 remcalc(4);
     }
   }
 

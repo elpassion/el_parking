@@ -15,14 +15,14 @@ $butterflybush: #57528f !default;
 
 /* Alpha Opacity Colors */
 $lightgray: rgba($butterflybush, .5) !default;
-$emptywhite: rgba($white, .2) !default;
+$lightwhite: rgba($white, .2) !default;
 
 /* FONT STACK AND SIZES */
 // Stack
 $font-stack: 'Gilroy', sans-serif !default;
 
 // Size
-$base-size: 17 !default;
+$base-size: 10 !default;
 $font-size: ($base-size * 1px) !default;
 
 // Weight

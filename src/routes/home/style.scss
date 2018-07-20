@@ -1,4 +1,6 @@
-$LINE_MAX_WIDTH: 768px;
+$LINE_MAX_WIDTH: 768 !default;
+$CAR_IMAGE_MAX_WIDTH: 260 !default;
+$LINE_ROTATION: 31deg !default;
 
 .splashWrapper {
   display: flex;
@@ -27,32 +29,31 @@ $LINE_MAX_WIDTH: 768px;
   position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 260px;
+  max-width: remcalc($CAR_IMAGE_MAX_WIDTH);
 
   &:before,
   &:after {
     content: '';
     position: absolute;
     display: block;
+    width: remcalc($LINE_MAX_WIDTH);
     height: 1px;
     background: $gray;
     opacity: .2;
-    transform: rotate(31deg);
+    transform: rotate($LINE_ROTATION);
   }
 }
 
 // Car Lines
 .backCar {
   &:before {
-    width: $LINE_MAX_WIDTH;
-    top: -165px;
-    left: -470px;
+    top: remcalc(-165);
+    left: remcalc(-470);
   }
 
   &:after {
-    width: $LINE_MAX_WIDTH;
     bottom: 0;
-    left: -240px;
+    left: remcalc(-240);
   }
 }
 
@@ -60,14 +61,12 @@ $LINE_MAX_WIDTH: 768px;
   margin-bottom: 3vh;
 
   &:before {
-    width: $LINE_MAX_WIDTH;
-    bottom: -160px;
-    left: 30px;
+    bottom: remcalc(-160);
+    left: remcalc(30);
   }
 
   &:after {
-    width: $LINE_MAX_WIDTH;
-    bottom: -160px;
-    left: -280px;
+    bottom: remcalc(-160);
+    left: remcalc(-280);
   }
 }

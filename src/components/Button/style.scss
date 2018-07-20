@@ -1,15 +1,17 @@
 /* Local Variables */
-$BUTTON_HEIGHT: 60px !default;
+$BUTTON_HEIGHT: 60 !default;
 
 .button {
   display: block;
   margin: 0 auto;
   width: 100%;
-  height: $BUTTON_HEIGHT;
-  line-height: $BUTTON_HEIGHT;
+  height: remcalc($BUTTON_HEIGHT);
+  line-height: remcalc($BUTTON_HEIGHT);
   border-radius: $radius;
+  font-size: remcalc(17);
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 
   &:not(:last-of-type) {
     margin-bottom: remcalc(16);

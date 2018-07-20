@@ -1,6 +1,6 @@
 /* Rem Calculation */
 @function remcalc($size) {
-  @return (round(($size / $base-size) * 100) / 100) * 1rem;
+  @return ($size / $base-size) * 1rem;
 }
 
 /* Breakpoints */
