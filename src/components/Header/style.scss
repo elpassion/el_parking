@@ -20,11 +20,19 @@
     .dateToday {
       color: $cornflowerblue;
     }
+
+    .powerIconFill {
+      fill: #fff;
+    }
   }
 
   &.isLight {
     .headerDate  {
       color: $lightgray;
+    }
+
+    .powerIconFill {
+      fill: $governorbay;
     }
   }
 }

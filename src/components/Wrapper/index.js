@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import classNames from 'classnames';
 
 import wrapperStyle from './style.scss';

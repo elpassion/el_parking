@@ -1,6 +1,5 @@
 /* Local Variables */
 $BUTTON_HEIGHT: 60px !default;
-$BUTTON_RADIUS: 5px !default;
 
 .button {
   display: block;
@@ -8,7 +7,7 @@ $BUTTON_RADIUS: 5px !default;
   width: 100%;
   height: $BUTTON_HEIGHT;
   line-height: $BUTTON_HEIGHT;
-  border-radius: $BUTTON_RADIUS;
+  border-radius: $radius;
   text-align: center;
   text-decoration: none;
 

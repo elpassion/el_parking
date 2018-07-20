@@ -1,5 +1,5 @@
-import { h, Component } from 'preact';
-import { Router, route } from 'preact-router';
+import { Component } from 'preact';
+import { route } from 'preact-router';
 import { inject } from 'mobx-react';
 
 @inject('authStore')

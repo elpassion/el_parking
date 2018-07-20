@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import classnames from 'classnames/bind';
 import style from './style.scss';
 

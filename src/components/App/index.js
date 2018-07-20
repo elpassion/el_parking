@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { Component } from 'preact';
 import { Router, getCurrentUrl } from 'preact-router';
 import { inject, observer } from 'mobx-react';
 import Home from '../../routes/home';
@@ -36,7 +36,6 @@ export default class App extends Component {
     changeRoute(getCurrentUrl(this));
   }
 
-
   handleRoute = (event) => {
     const { authStore: { changeRoute } } = this.props;
     changeRoute(event.url);
@@ -46,17 +45,16 @@ export default class App extends Component {
     const { authStore: { currentRoute } } = this.props;
 
     return (
-      <Wrapper className={currentRoute === routeMap.home ? style.isHome : ''} id='app'>
-        {currentRoute !== routeMap.home && <Header theme='Dark' />}
+      <Wrapper className={currentRoute === routeMap.home ? style.isHome : null} id='app'>
+        {currentRoute !== routeMap.home && <Header Dark />}
         <Router onChange={this.handleRoute}>
-          <Home path='/' />
+          <Home path={routeMap.home} />
           <ProtectedRoute
-            path='/example'
+            path={routeMap.example}
             component={Example}
           />
           <Home default />
         </Router>
-
       </Wrapper>
     );
   }

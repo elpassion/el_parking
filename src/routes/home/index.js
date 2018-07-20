@@ -1,21 +1,20 @@
-import { h } from 'preact';
-import Button from '../../components/Button';
+import Button from '../../components/Button/index';
 import routeMap from '../../utils/routeMap';
 import BackCar from '../../components/CarSvg/BackCar';
 import FrontCar from '../../components/CarSvg/FrontCar';
-import Logotype from '../../components/EpLogotype';
+import ElPassionLogo from '../../components/ElPassionLogo';
 
 import style from './style.scss';
 
 const Home = () => (
-  <div className={style.splashWrapperr}>
+  <div className={style.splashWrapper}>
     <div>
       <BackCar className={style.backCar} />
       <FrontCar className={style.frontCar} />
-      <Logotype />
+      <ElPassionLogo />
     </div>
     <Button
-      type='primary'
+      Primary
       href={routeMap.example}
     >
       Zaloguj przez Google
