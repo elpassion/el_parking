@@ -13,6 +13,7 @@ export default class Interested extends Component {
     super(props);
     this.reservePlace = this.reservePlace.bind(this);
     this.releasePlace = this.releasePlace.bind(this);
+    this.placeNumber = 2026;
   }
 
   reservePlace = (evt) => {
@@ -36,7 +37,7 @@ export default class Interested extends Component {
       <Heading>
         Zwolniło się miejsce:
       </Heading>
-      <PlaceNumber number={2063} />
+      <PlaceNumber number={this.placeNumber} />
       <Button
         Primary
         href='/'
@@ -58,7 +59,7 @@ export default class Interested extends Component {
       <Heading>
         Zarezerwowano miejsce:
       </Heading>
-      <PlaceNumber reserved number={2063} />
+      <PlaceNumber reserved number={this.placeNumber} />
       <Button
         Primary
         href='/'
