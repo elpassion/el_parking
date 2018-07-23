@@ -50,16 +50,28 @@ export default class Interested extends Component {
   );
 
   renderPlaceRegistration = placeNumber => (
-    <div className={style.content}>
-      <Heading>Zarezerwowano miejsce:</Heading>
-      <PlaceNumber reserved number={placeNumber} />
-      <Button
-        Primary
-        href='/'
-        onClick={this.releasePlace}
-      >
-        Zwolnij
-      </Button>
+    <div className={`${style.content} ${style.spaceBetween}`}>
+      <div>
+        <Heading>Zarezerwowano miejsce:</Heading>
+        <PlaceNumber reserved number={placeNumber} />
+      </div>
+      <div>
+        <p className={style.blueHint}>
+          <span className={style.blueHintLine}>
+            Jednak nie przyjedziesz?
+          </span>
+          <span className={style.blueHintLine}>
+            Daj skorzystać komuś innemu.
+          </span>
+        </p>
+        <Button
+          Primary
+          href='/'
+          onClick={this.releasePlace}
+        >
+          Zwolnij miejsce
+        </Button>
+      </div>
     </div>
   );
 

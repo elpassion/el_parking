@@ -14,8 +14,8 @@ $BUTTON_HEIGHT: 60 !default;
   text-decoration: none;
   cursor: pointer;
 
-  &:not(:last-of-type) {
-    margin-bottom: remcalc(16);
+  &:not(:last-child) {
+    margin-bottom: remcalc(24);
   }
 
   &.primary {
