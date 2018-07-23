@@ -1,5 +1,5 @@
-import { Component } from 'preact';
 import { Router } from 'preact-router';
+import Match from 'preact-router/match';
 import WebFont from 'webfontloader';
 import Home from '../../routes/home';
 import Header from '../Header';
@@ -17,27 +17,18 @@ if (typeof window !== 'undefined') {
   });
 }
 
-export default class App extends Component {
-  state = {
-    isHome: true,
-  };
-
-  handleRoute = (event) => {
-    this.setState({
-      isHome: event.url === routeMap.home,
-    });
-  };
-
-  render() {
-    const { isHome } = this.state;
-    return (
-      <Wrapper isHome={isHome} id='app'>
-        {!isHome && (<Header Dark />)}
-        <Router onChange={this.handleRoute}>
+export default () => (
+  <Match path={routeMap.home}>
+    {({ url }) => (
+      <Wrapper isHome={url === routeMap.home} id='app'>
+        {url !== routeMap.home && (
+          <Header Dark />
+        )}
+        <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
         </Router>
       </Wrapper>
-    );
-  }
-}
+    )}
+  </Match>
+);
