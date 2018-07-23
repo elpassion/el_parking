@@ -3,7 +3,7 @@ import { route } from 'preact-router';
 import { inject } from 'mobx-react';
 
 @inject('appStore')
-export default class App extends Component {
+export default class ProtectedRoute extends Component {
   componentWillMount() {
     const { redirectPath, appStore: { isAuthenticated } } = this.props;
 
