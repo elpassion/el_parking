@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import style from './style.scss';
+import style from '../style.scss';
 
 export default ({
   className,

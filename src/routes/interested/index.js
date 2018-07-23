@@ -9,35 +9,30 @@ import style from './style.scss';
 @inject('appStore')
 @observer
 export default class Interested extends Component {
-  constructor(props) {
-    super(props);
-    this.reservePlace = this.reservePlace.bind(this);
-    this.releasePlace = this.releasePlace.bind(this);
-    this.placeNumber = 2026;
-  }
+  state = {
+    placeNumber: 2026,
+  };
 
   reservePlace = (evt) => {
+    const { appStore } = this.props;
     evt.preventDefault();
     evt.stopPropagation();
 
-    const { appStore: { reservePlace } } = this.props;
-    reservePlace();
+    appStore.reservePlace();
   };
 
   releasePlace = (evt) => {
+    const { appStore } = this.props;
     evt.preventDefault();
     evt.stopPropagation();
 
-    const { appStore: { releasePlace } } = this.props;
-    releasePlace();
+    appStore.releasePlace();
   };
 
-  renderAvailablePlaceView = () => (
+  renderAvailablePlaceView = placeNumber => (
     <div className={style.content}>
-      <Heading>
-        Zwolniło się miejsce:
-      </Heading>
-      <PlaceNumber number={this.placeNumber} />
+      <Heading> Zwolniło się miejsce:</Heading>
+      <PlaceNumber number={placeNumber} />
       <Button
         Primary
         href='/'
@@ -54,26 +49,27 @@ export default class Interested extends Component {
     </div>
   );
 
-  renderPlaceRegistration = () => (
+  renderPlaceRegistration = placeNumber => (
     <div className={style.content}>
-      <Heading>
-        Zarezerwowano miejsce:
-      </Heading>
-      <PlaceNumber reserved number={this.placeNumber} />
+      <Heading>Zarezerwowano miejsce:</Heading>
+      <PlaceNumber reserved number={placeNumber} />
       <Button
         Primary
         href='/'
         onClick={this.releasePlace}
       >
-        Zwolnij miejsce
+        Zwolnij
       </Button>
     </div>
   );
 
   render() {
-    const { appStore: { placeIsAvailable } } = this.props;
+    const { placeNumber } = this.state;
+    const { appStore } = this.props;
     return (
-      placeIsAvailable ? this.renderAvailablePlaceView() : this.renderPlaceRegistration()
+      appStore.placeIsAvailable
+        ? this.renderAvailablePlaceView(placeNumber)
+        : this.renderPlaceRegistration(placeNumber)
     );
   }
 }

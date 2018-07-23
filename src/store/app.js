@@ -2,7 +2,9 @@ import { observable, action } from 'mobx';
 
 class AppStore {
   @observable isAuthenticated = true;
+
   @observable placeIsAvailable = true;
+
   @observable currentRoute;
 
   @action changeRoute = (route) => {

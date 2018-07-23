@@ -1,18 +1,17 @@
-import classnames from 'classnames/bind';
+import classNames from 'classnames';
 import style from './style.scss';
-
-const cx = classnames.bind(style);
 
 export default ({
   number, reserved, disabled, className,
 }) => {
-  const numberClasses = cx(style.wrapper, {
-    reserved,
-    disabled,
+  const numberClasses = classNames(style.wrapper, className, {
+    [style.reserved]: reserved,
+    [style.disabled]: disabled,
   });
 
   return (
-    <div className={classnames(className, numberClasses)}>
+    <div className={numberClasses}>
       {number}
-    </div>);
+    </div>
+  );
 };

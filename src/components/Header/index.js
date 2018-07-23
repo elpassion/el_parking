@@ -3,11 +3,7 @@ import { format } from 'date-fns';
 
 import style from './style.scss';
 
-export default ({
-  className,
-  Dark,
-  Light,
-}) => {
+export default ({ className, Dark, Light }) => {
   const LogOutIcon = () => (
     <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'>
       <g className={style.powerIconFill} fillRule='evenodd'>
