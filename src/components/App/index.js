@@ -17,13 +17,11 @@ if (typeof window !== 'undefined') {
   });
 }
 
-export default () => (
+const App = () => (
   <Match path={routeMap.home}>
-    {({ url }) => (
-      <Wrapper isHome={url === routeMap.home} id='app'>
-        {url !== routeMap.home && (
-          <Header Dark />
-        )}
+    {({ matches: isHome }) => (
+      <Wrapper isHome={isHome} id='app'>
+        {!isHome && (<Header Dark />)}
         <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
@@ -32,3 +30,5 @@ export default () => (
     )}
   </Match>
 );
+
+export default App;
