@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import wrapperStyle from './style.scss';
 
-export default ({
+const Wrapper = ({
   className, children, id, isHome,
 }) => {
   const wrapperClasses = classNames(wrapperStyle.wrapper, className, {
@@ -18,3 +18,5 @@ export default ({
     </div>
   );
 };
+
+export default Wrapper;

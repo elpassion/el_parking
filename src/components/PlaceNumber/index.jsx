@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import style from './style.scss';
 
-export default ({
+const PlaceNumber = ({
   number, reserved, disabled, className,
 }) => {
   const numberClasses = classNames(style.wrapper, className, {
@@ -15,3 +15,5 @@ export default ({
     </div>
   );
 };
+
+export default PlaceNumber;
