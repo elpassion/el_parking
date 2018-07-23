@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import style from './style.scss';
 
-export default ({
+const Button = ({
   Primary, Secondary, className, href, children, onClick,
 }) => {
   const buttonClass = classNames(style.button, className, {
@@ -23,3 +23,5 @@ export default ({
     )
   );
 };
+
+export default Button;

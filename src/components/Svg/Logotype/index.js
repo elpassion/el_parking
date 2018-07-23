@@ -2,9 +2,7 @@ import classNames from 'classnames';
 
 import style from '../style.scss';
 
-export default ({
-  className,
-}) => {
+const Logotype = ({ className }) => {
   const svgClasses = classNames(style.logotype, className);
   return (
     <svg
@@ -120,3 +118,5 @@ export default ({
     </svg>
   );
 };
+
+export default Logotype;

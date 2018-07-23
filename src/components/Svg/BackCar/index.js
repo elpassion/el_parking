@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import style from '../style.scss';
 
-export default ({
+const BackCar = ({
   className,
 }) => {
   const containerClasses = classNames(style.svgWrapper, className);
@@ -77,3 +77,5 @@ export default ({
     </div>
   );
 };
+
+export default BackCar;
