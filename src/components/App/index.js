@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { Router, getCurrentUrl } from 'preact-router';
+import { Router } from 'preact-router';
 import WebFont from 'webfontloader';
 import Home from '../../routes/home';
 import Header from '../Header';
