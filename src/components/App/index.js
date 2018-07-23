@@ -1,15 +1,14 @@
-import { h, Component } from 'preact';
+import { Component } from 'preact';
 import { Router } from 'preact-router';
-import { inject } from 'mobx-react';
+import WebFont from 'webfontloader';
 import Home from '../../routes/home';
-import Example from '../../routes/example';
-import style from './style.scss';
+import Header from '../Header';
+import Wrapper from '../Wrapper';
+import Interested from '../../routes/interested/index';
 import ProtectedRoute from '../ProtectedRoute';
+import routeMap from '../../utils/routeMap';
 
-const isBrowser = typeof window !== 'undefined';
-const WebFont = isBrowser ? require('webfontloader') : undefined;
-
-if (isBrowser) {
+if (typeof window !== 'undefined') {
   WebFont.load({
     custom: {
       families: ['Gilroy:n1,n3,n5'],
@@ -18,32 +17,27 @@ if (isBrowser) {
   });
 }
 
-@inject('authStore')
 export default class App extends Component {
-  /** Gets fired when the route changes.
-   *  @param {Object} event    "change" event from [preact-router](http://git.io/preact-router)
-   *  @param {string} event.url  The newly routed URL
-   */
+  state = {
+    isHome: true,
+  };
+
   handleRoute = (event) => {
-    this.currentUrl = event.url;
+    this.setState({
+      isHome: event.url === routeMap.home,
+    });
   };
 
   render() {
-    const { authStore: { isAuthenticated } } = this.props;
-
+    const { isHome } = this.state;
     return (
-      <div id='app'>
-        <div className={style.mobileWrapper}>
-          <Router onChange={this.handleRoute}>
-            <Home path='/' />
-            <ProtectedRoute
-              path='/example'
-              component={Example}
-            />
-            <Home default />
-          </Router>
-        </div>
-      </div>
+      <Wrapper isHome={isHome} id='app'>
+        {!isHome && (<Header Dark />)}
+        <Router onChange={this.handleRoute}>
+          <Home path={routeMap.home} default />
+          <ProtectedRoute path={routeMap.interested} component={Interested} />
+        </Router>
+      </Wrapper>
     );
   }
 }

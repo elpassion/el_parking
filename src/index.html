@@ -2,14 +2,22 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title><%= htmlWebpackPlugin.options.title %></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>EL Parking</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="nightmode" content="disable">
+    <meta name="imagemode" content="force">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="EL Parking">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-tap-highlight" content="no">
+    <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
+      <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
+    <% } %>
 		<link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-		<% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
-			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
-		<% } %>
 		<% for (var chunk of webpack.chunks) { %>
 		 <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
 			<% for (var file of chunk.files) { %>

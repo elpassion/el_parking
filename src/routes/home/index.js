@@ -1,10 +1,25 @@
-import { h } from 'preact';
+import Button from '../../components/Button/index';
+import routeMap from '../../utils/routeMap';
+import BackCar from '../../components/Svg/BackCar';
+import FrontCar from '../../components/Svg/FrontCar';
+import Loggotype from '../../components/Svg/Logotype';
+
 import style from './style.scss';
 
 const Home = () => (
-  <div className={style.home}>
-    <h1>Home</h1>
-    <p>This is the Home component.</p>
+  <div className={style.splashWrapper}>
+    <div className={style.splashImage}>
+      <BackCar className={style.backCar} />
+      <FrontCar className={style.frontCar} />
+      <Loggotype />
+    </div>
+    <Button
+      Primary
+      href={routeMap.interested}
+      className={style.highOrder}
+    >
+      Zaloguj przez Google
+    </Button>
   </div>
 );
 

@@ -1,5 +1,72 @@
-.home {
+$LINE_MAX_WIDTH: 768 !default;
+$CAR_IMAGE_MAX_WIDTH: 260 !default;
+$LINE_ROTATION: 31deg !default;
+
+.splashWrapper {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.splashImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
+  margin: 0 auto 2vh;
+  z-index: $z-zero;
+}
+
+// higher z-index for button
+.highOrder {
+  z-index: $z-default;
+}
+
+// Common styles for both images
+.backCar,
+.frontCar {
+  position: relative;
+  margin: 0 auto;
   width: 100%;
-  min-height: 100%;
-  padding: 56px 20px;
+  max-width: remcalc($CAR_IMAGE_MAX_WIDTH);
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: remcalc($LINE_MAX_WIDTH);
+    height: 1px;
+    background: $gray;
+    opacity: .2;
+    transform: rotate($LINE_ROTATION);
+  }
+}
+
+// Car Lines
+.backCar {
+  &:before {
+    top: remcalc(-165);
+    left: remcalc(-470);
+  }
+
+  &:after {
+    bottom: 0;
+    left: remcalc(-240);
+  }
+}
+
+.frontCar {
+  margin-bottom: 3vh;
+
+  &:before {
+    bottom: remcalc(-160);
+    left: remcalc(30);
+  }
+
+  &:after {
+    bottom: remcalc(-160);
+    left: remcalc(-280);
+  }
 }

@@ -1,20 +1,18 @@
-import { h, Component } from 'preact';
-import { Router, route } from 'preact-router';
+import { Component } from 'preact';
+import { route } from 'preact-router';
 import { inject } from 'mobx-react';
 
-@inject('authStore')
-export default class App extends Component {
+@inject('appStore')
+export default class ProtectedRoute extends Component {
   componentWillMount() {
-    const { redirectPath, authStore: { isAuthenticated } } = this.props;
+    const { redirectPath, appStore: { isAuthenticated } } = this.props;
 
     if (!isAuthenticated) route(redirectPath || '/');
   }
 
-  render({
-    component: Route, ...props
-  }) {
-    const { authStore: { isAuthenticated } } = this.props;
+  render({ component: Route, ...props }) {
+    const { appStore: { isAuthenticated } } = this.props;
 
-    return <div>{ isAuthenticated && <Route {...props} /> }</div>;
+    return isAuthenticated && <Route {...props} />;
   }
 }

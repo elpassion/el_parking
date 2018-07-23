@@ -1,20 +1,17 @@
-import { h } from 'preact';
-import classnames from 'classnames/bind';
+import classNames from 'classnames';
 import style from './style.scss';
 
-const cx = classnames.bind(style);
-
 export default ({
-  number, empty, disabled, className,
+  number, reserved, disabled, className,
 }) => {
-  const numberClasses = cx({
-    wrapper: true,
-    empty,
-    disabled,
+  const numberClasses = classNames(style.wrapper, className, {
+    [style.reserved]: reserved,
+    [style.disabled]: disabled,
   });
 
   return (
-    <div className={classnames(className, numberClasses)}>
-      <span>{number}</span>
-    </div>);
+    <div className={numberClasses}>
+      {number}
+    </div>
+  );
 };

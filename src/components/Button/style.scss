@@ -1,0 +1,30 @@
+/* Local Variables */
+$BUTTON_HEIGHT: 60 !default;
+
+.button {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: remcalc($BUTTON_HEIGHT);
+  line-height: remcalc($BUTTON_HEIGHT);
+  border: 0;
+  border-radius: $radius;
+  font-size: remcalc(17);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:not(:last-of-type) {
+    margin-bottom: remcalc(16);
+  }
+
+  &.primary {
+    color: $white;
+    background: $robinblue;
+  }
+
+  &.secondary {
+    color: $robinblue;
+    background: transparent;
+  }
+}

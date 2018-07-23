@@ -1,0 +1,42 @@
+$HEADER_MAX_SIZE: 84 !default;
+
+.header {
+  display: flex;
+  flex: 0 1 remcalc($HEADER_MAX_SIZE);
+  margin: 0 0 remcalc($HEADER_MAX_SIZE / 6);
+  font-size: remcalc(17);
+
+  .headerDate {
+    line-height: 1.9;
+    letter-spacing: remcalc(.8);
+
+    .dateToday {
+      margin: 0 0 0 remcalc(4);
+    }
+  }
+
+  .headerAction {
+    margin: 0 0 0 auto;
+  }
+
+  /* Themes */
+  &.isDark {
+    .dateToday {
+      color: $cornflowerblue;
+    }
+
+    .powerIconFill {
+      fill: #fff;
+    }
+  }
+
+  &.isLight {
+    .headerDate  {
+      color: $lightgray;
+    }
+
+    .powerIconFill {
+      fill: $governorbay;
+    }
+  }
+}

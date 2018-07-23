@@ -1,39 +1,34 @@
-/* COLORS */
-// Background Gradient Colors
+/* Background Gradient Colors */
 $darkblue: #2a00ac !default;
 $governorbay: #3130cf !default;
 
-// Other Colors
+/* Other Colors */
 $white: #fff !default;
+$lightblue: #eeeeff !default;
 $cornflowerblue: #7f7dff !default;
 $robinblue: #00c5c5 !default;
 $deepblue: #1e0381 !default;
-
-// Base for Alpha opacity text
+$gray: #d8d8d8 !default;
 $butterflybush: #57528f !default;
 
 /* Alpha Opacity Colors */
 $lightgray: rgba($butterflybush, .5) !default;
-$emptywhite: rgba($white, .2);
+$lightwhite: rgba($white, .2) !default;
 
-/* FONT STACK AND SIZES */
-// Stack
+/* Font */
 $font-stack: 'Gilroy', sans-serif !default;
 
-// Size
-$base-size: 17 !default;
+$base-size: 10 !default;
 $font-size: ($base-size * 1px) !default;
 
-// Weight
 $light: 100 !default;
 $regular: 300 !default;
 $medium: 500 !default;
 
-/* MISC */
-// Motion
+/* Misc */
 $cubic: cubic-bezier(.17, .67, .47, 1) !default;
+$radius: 5px !default;
 
-// Layers
 $z-absolute-top: 50 !default;
 $z-top: 40 !default;
 $z-higher: 30 !default;

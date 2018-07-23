@@ -1,25 +1,26 @@
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.25rem 1.25rem 1.5rem;
-  font-size: 5.75rem;
-  line-height: 5.75rem;
-  color: $white;
-  background-color: $deepblue;
-  border-radius: 5px;
+$BOX_HEIGHT: 130 !default;
+$FONT_SIZE: 92 !default;
 
-  &.empty {
-    background-color: transparent;
-    border: 1px solid $emptywhite;
+.wrapper {
+  margin: 0 auto remcalc(36);
+  width: 100%;
+  height: remcalc($BOX_HEIGHT);
+  font-size: remcalc($FONT_SIZE);
+  line-height: remcalc($BOX_HEIGHT + 10);
+  text-align: center;
+  color: $white;
+  border: 1px solid $lightwhite;
+  border-radius: $radius;
+  user-select: none;
+
+  &.reserved {
+    background: $deepblue;
+    border-color: $deepblue;
   }
 
   &.disabled {
-    color: $cornflowerblue;
-    background-color: rgba($cornflowerblue, .2);
-
-    * {
-      opacity: .2;
-    }
+    color: rgba($cornflowerblue, .2);
+    background: rgba($cornflowerblue, .2);
+    border: 0;
   }
 }
