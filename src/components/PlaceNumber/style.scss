@@ -2,13 +2,13 @@ $BOX_HEIGHT: 130 !default;
 $FONT_SIZE: 92 !default;
 
 .wrapper {
-  margin: 0 auto remcalc(36);
   width: 100%;
   height: remcalc($BOX_HEIGHT);
+  margin: 0 auto remcalc(36);
   font-size: remcalc($FONT_SIZE);
   line-height: remcalc($BOX_HEIGHT + 10);
-  text-align: center;
   color: $white;
+  text-align: center;
   border: 1px solid $lightwhite;
   border-radius: $radius;
   user-select: none;
