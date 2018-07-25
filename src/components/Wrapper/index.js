@@ -1,15 +1,13 @@
 import classNames from 'classnames';
-import routeMap from '../../utils/routeMap';
-
 
 import wrapperStyle from './style.scss';
 
 const Wrapper = ({
-  className, children, id, isHome, location,
+  className, children, id, isHome, isWhite,
 }) => {
   const wrapperClasses = classNames(wrapperStyle.wrapper, className, {
     [wrapperStyle.isHome]: isHome,
-    [wrapperStyle.isWhite]: location === routeMap.no_place_left,
+    [wrapperStyle.isWhite]: isWhite,
   });
   const containerClasses = classNames(wrapperStyle.container, className);
 

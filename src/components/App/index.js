@@ -20,8 +20,13 @@ if (typeof window !== 'undefined') {
 const App = () => (
   <Match path={routeMap.home}>
     {({ matches: isHome, url }) => (
-      <Wrapper isHome={isHome} location={url} id='app'>
-        {!isHome && (<Header location={url} />)}
+      <Wrapper isHome={isHome} isWhite={url === routeMap.noPlaceLeft} id='app'>
+        {!isHome && (
+          <Header
+            isDark={url === routeMap.interested}
+            isLight={url === routeMap.noPlaceLeft}
+          />
+        )}
         <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
