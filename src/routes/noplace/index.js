@@ -3,7 +3,7 @@ import BackCar from '../../components/Svg/BackCar';
 import GrayCar from '../../components/Svg/GrayCar';
 import style from './style.scss';
 
-const noPlaceLeft = () => (
+const NoPlaceLeft = () => (
   <div className={style.contentWrapper}>
     <div className={style.splashScreen}>
       <BackCar className={style.backCar} />
@@ -20,4 +20,4 @@ const noPlaceLeft = () => (
   </div>
 );
 
-export default noPlaceLeft;
+export default NoPlaceLeft;
