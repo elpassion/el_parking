@@ -1,9 +1,9 @@
-$HEADER_MAX_SIZE: 84 !default;
+$HEADER_MAX_SIZE: 64 !default;
 
 .header {
   display: flex;
   flex: 0 1 remcalc($HEADER_MAX_SIZE);
-  margin: 0 0 remcalc($HEADER_MAX_SIZE / 6);
+  margin: 0 0 remcalc($HEADER_MAX_SIZE / 8);
   font-size: remcalc(17);
 
   .headerDate {

@@ -1,5 +1,6 @@
 $LINE_MAX_WIDTH: 768 !default;
 $CAR_IMAGE_MAX_WIDTH: 260 !default;
+$CAR_IMAGE_MAX_HEIGHT: 175 !default;
 $LINE_ROTATION: 31deg !default;
 
 .splashWrapper {
@@ -18,18 +19,18 @@ $LINE_ROTATION: 31deg !default;
   z-index: $z-zero;
 }
 
-// higher z-index for button
+
 .highOrder {
   z-index: $z-default;
 }
 
-// Common styles for both images
 .backCar,
 .frontCar {
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: remcalc($CAR_IMAGE_MAX_WIDTH);
+  height: remcalc($CAR_IMAGE_MAX_HEIGHT);
 
   &:before,
   &:after {
@@ -44,7 +45,6 @@ $LINE_ROTATION: 31deg !default;
   }
 }
 
-// Car Lines
 .backCar {
   &:before {
     top: remcalc(-165);
@@ -62,7 +62,7 @@ $LINE_ROTATION: 31deg !default;
 
   &:before {
     bottom: remcalc(-160);
-    left: remcalc(30);
+    left: remcalc(10);
   }
 
   &:after {

@@ -1,5 +1,79 @@
+$SPLASH_CONTAINER_WIDTH: 220 !default;
+$SPLASH_CONTAINER_HEIGHT: 180 !default;
+$LINE_MAX_WIDTH: 768 !default;
+$LINE_ROTATION: 31deg !default;
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 100%;
+  padding: 5vh 0 0;
+}
+
+.splashScreen {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: remcalc($SPLASH_CONTAINER_WIDTH);
+  height: remcalc($SPLASH_CONTAINER_HEIGHT);
+}
+
 .graySubheader {
   color: $lightgray;
   font-size: remcalc(17);
   line-height: remcalc(25);
+}
+
+.backCar,
+.grayCar {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  z-index: $z-higher;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: remcalc($LINE_MAX_WIDTH);
+    height: 1px;
+    background: rgba($deepblue, .1);
+    transform: rotate($LINE_ROTATION);
+    z-index: $z-default;
+  }
+}
+
+.grayCar {
+  position: absolute;
+  top: remcalc(-75);
+  left: remcalc(125);
+  z-index: $z-high;
+}
+
+.backCar {
+  &:before {
+    bottom: remcalc(150);
+    left: remcalc(-570);
+  }
+
+  &:after {
+    bottom: remcalc(150);
+    right: remcalc(-636);
+    transform: rotate(-$LINE_ROTATION);
+  }
+}
+
+.grayCar {
+  &:before {
+    top: remcalc(10);
+    left: remcalc(-548);
+  }
+
+  &:after {
+    top: remcalc(-70);
+    left: remcalc(-415);
+  }
 }
