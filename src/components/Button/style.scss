@@ -27,4 +27,8 @@ $BUTTON_HEIGHT: 60 !default;
     color: $robinblue;
     background: transparent;
   }
+
+  &:focus {
+    outline: 0;
+  }
 }
