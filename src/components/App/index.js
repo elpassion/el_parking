@@ -31,7 +31,7 @@ const App = () => (
         <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
-          <ProtectedRoute path={routeMap.no_place_left} component={noPlaceLeft} />
+          <ProtectedRoute path={routeMap.noPlaceLeft} component={noPlaceLeft} />
         </Router>
       </Wrapper>
     )}
