@@ -3,16 +3,16 @@ $BUTTON_HEIGHT: 60 !default;
 
 .button {
   display: block;
-  margin: 0 auto;
   width: 100%;
   height: remcalc($BUTTON_HEIGHT);
-  line-height: remcalc($BUTTON_HEIGHT);
-  border: 0;
-  border-radius: $radius;
+  margin: 0 auto;
   font-size: remcalc(17);
+  line-height: remcalc($BUTTON_HEIGHT);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  border: 0;
+  border-radius: $radius;
   font-weight: $medium;
 
   &:not(:last-child) {
@@ -27,5 +27,9 @@ $BUTTON_HEIGHT: 60 !default;
   &.secondary {
     color: $robinblue;
     background: transparent;
+  }
+
+  &:focus {
+    outline: 0;
   }
 }

@@ -11,12 +11,12 @@ $LINE_ROTATION: 31deg !default;
 }
 
 .splashImage {
+  z-index: $z-zero;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: space-evenly;
-  flex: 1 1 auto;
   margin: 0 auto 2vh;
-  z-index: $z-zero;
 }
 
 
@@ -27,9 +27,9 @@ $LINE_ROTATION: 31deg !default;
 .backCar,
 .frontCar {
   position: relative;
-  margin: 0 auto;
   width: 100%;
   max-width: remcalc($CAR_IMAGE_MAX_WIDTH);
+  margin: 0 auto;
   height: remcalc($CAR_IMAGE_MAX_HEIGHT);
 
   &:before,

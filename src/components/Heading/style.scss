@@ -2,10 +2,10 @@ $BOTTOM_MARGIN: 16 !default;
 $HEADING_FONT_SIZE: 38 !default;
 
 .heading {
-  color: $white;
   margin: 0 0 remcalc($BOTTOM_MARGIN);
   font-size: remcalc($HEADING_FONT_SIZE);
   font-weight: $light;
+  color: $white;
 
   &.color {
     &Blue { color: $midblue; }
