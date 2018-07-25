@@ -1,6 +1,6 @@
 export default {
   home: '/',
   interested: '/interested',
-  no_place_left: '/no-place-left',
+  noPlaceLeft: '/no-place-left',
   yourPlace: '/your-place',
 };

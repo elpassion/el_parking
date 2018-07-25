@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
 import Heading from '../../components/Heading';
 import Button from '../../components/Button/index';
@@ -49,19 +50,35 @@ export default class Interested extends Component {
     </div>
   );
 
-  renderPlaceRegistration = placeNumber => (
-    <div className={style.content}>
-      <Heading>Zarezerwowano miejsce:</Heading>
-      <PlaceNumber reserved number={placeNumber} />
-      <Button
-        Primary
-        href='/'
-        onClick={this.releasePlace}
-      >
-        Zwolnij
-      </Button>
-    </div>
-  );
+  renderPlaceRegistration = (placeNumber) => {
+    const containerClasses = classNames(style.content, style.spaceBetween);
+
+    return (
+      <div className={containerClasses}>
+        <div>
+          <Heading>Zarezerwowano miejsce:</Heading>
+          <PlaceNumber reserved number={placeNumber} />
+        </div>
+        <div>
+          <p className={style.blueHint}>
+            <span className={style.blueHintLine}>
+              Jednak nie przyjedziesz?
+            </span>
+            <span className={style.blueHintLine}>
+              Daj skorzystać komuś innemu.
+            </span>
+          </p>
+          <Button
+            Primary
+            href='/'
+            onClick={this.releasePlace}
+          >
+            Zwolnij miejsce
+          </Button>
+        </div>
+      </div>
+    );
+  };
 
   render () {
     const { placeNumber } = this.state;
