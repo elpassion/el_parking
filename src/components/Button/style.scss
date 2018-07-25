@@ -13,6 +13,7 @@ $BUTTON_HEIGHT: 60 !default;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  font-weight: $medium;
 
   &:not(:last-child) {
     margin-bottom: remcalc(24);
