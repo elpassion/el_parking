@@ -4,7 +4,8 @@ import WebFont from 'webfontloader';
 import Home from '../../routes/home';
 import Header from '../Header';
 import Wrapper from '../Wrapper';
-import Interested from '../../routes/interested/index';
+import Interested from '../../routes/interested';
+import YourPlace from '../../routes/yourplace';
 import ProtectedRoute from '../ProtectedRoute';
 import routeMap from '../../utils/routeMap';
 
@@ -25,6 +26,7 @@ const App = () => (
         <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
+          <ProtectedRoute path={routeMap.yourPlace} component={YourPlace} />
         </Router>
       </Wrapper>
     )}

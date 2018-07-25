@@ -1,4 +1,4 @@
-import Button from '../../components/Button/index';
+import Button from '../../components/Button';
 import routeMap from '../../utils/routeMap';
 import BackCar from '../../components/Svg/BackCar';
 import FrontCar from '../../components/Svg/FrontCar';

@@ -4,13 +4,13 @@ import { inject } from 'mobx-react';
 
 @inject('appStore')
 export default class ProtectedRoute extends Component {
-  componentWillMount() {
+  componentWillMount () {
     const { redirectPath, appStore: { isAuthenticated } } = this.props;
 
     if (!isAuthenticated) route(redirectPath || '/');
   }
 
-  render({ component: Route, ...props }) {
+  render ({ component: Route, ...props }) {
     const { appStore: { isAuthenticated } } = this.props;
 
     return isAuthenticated && <Route {...props} />;

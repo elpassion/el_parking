@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { inject, observer } from 'mobx-react';
 import Heading from '../../components/Heading';
-import Button from '../../components/Button';
+import Button from '../../components/Button/index';
 import PlaceNumber from '../../components/PlaceNumber';
 
 import style from './style.scss';
@@ -63,7 +63,7 @@ export default class Interested extends Component {
     </div>
   );
 
-  render() {
+  render () {
     const { placeNumber } = this.state;
     const { appStore } = this.props;
     return (
