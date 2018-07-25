@@ -12,7 +12,7 @@ export default class ToggleBox extends Component {
     this.setState(prevState => ({ isExpanded: !prevState.isExpanded }));
   };
 
-  render() {
+  render () {
     const { isExpanded } = this.state;
     const toggleBoxClasses = classNames(style.toggleBox, { [style.isExpanded]: isExpanded });
 
