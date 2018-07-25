@@ -6,6 +6,7 @@ $BUTTON_HEIGHT: 60 !default;
   width: 100%;
   height: remcalc($BUTTON_HEIGHT);
   margin: 0 auto;
+  overflow: hidden;
   font-size: remcalc(17);
   line-height: remcalc($BUTTON_HEIGHT);
   text-align: center;
