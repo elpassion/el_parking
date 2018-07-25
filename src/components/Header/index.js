@@ -1,9 +1,10 @@
 import classNames from 'classnames';
+import routeMap from '../../utils/routeMap';
 import { format } from 'date-fns';
 
 import style from './style.scss';
 
-const Header = ({ className, Dark, Light }) => {
+const Header = ({ className, location }) => {
   const LogOutIcon = () => (
     <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'>
       <g className={style.powerIconFill} fillRule='evenodd'>
@@ -12,6 +13,9 @@ const Header = ({ className, Dark, Light }) => {
       </g>
     </svg>
   );
+
+  const Dark = location === routeMap.interested;
+  const Light = location === routeMap.no_place_left;
 
   const today = new Date();
   const headerClass = classNames(className, style.header, {
