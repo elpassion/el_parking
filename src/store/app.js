@@ -5,12 +5,6 @@ class AppStore {
 
   @observable placeIsAvailable = true;
 
-  @observable currentRoute;
-
-  @action changeRoute = (route) => {
-    this.currentRoute = route;
-  };
-
   @action reservePlace = () => {
     this.placeIsAvailable = false;
   };
