@@ -19,7 +19,6 @@ $LINE_ROTATION: 31deg !default;
   margin: 0 auto 2vh;
 }
 
-
 .highOrder {
   z-index: $z-default;
 }
@@ -28,18 +27,18 @@ $LINE_ROTATION: 31deg !default;
 .frontCar {
   position: relative;
   width: 100%;
+  height: remcalc($CAR_IMAGE_MAX_HEIGHT);
   max-width: remcalc($CAR_IMAGE_MAX_WIDTH);
   margin: 0 auto;
-  height: remcalc($CAR_IMAGE_MAX_HEIGHT);
 
   &:before,
   &:after {
-    content: '';
     position: absolute;
     display: block;
     width: remcalc($LINE_MAX_WIDTH);
     height: 1px;
     background: $gray;
+    content: '';
     opacity: .2;
     transform: rotate($LINE_ROTATION);
   }

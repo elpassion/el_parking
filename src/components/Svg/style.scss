@@ -1,8 +1,8 @@
 .splashImage {
   position: relative;
+  z-index: $z-high;
   display: block;
   margin: 0 auto 2vh;
-  z-index: $z-high;
 }
 
 .logotype {

@@ -7,13 +7,13 @@ $BUTTON_HEIGHT: 60 !default;
   height: remcalc($BUTTON_HEIGHT);
   margin: 0 auto;
   font-size: remcalc(17);
+  font-weight: $medium;
   line-height: remcalc($BUTTON_HEIGHT);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   border: 0;
   border-radius: $radius;
-  font-weight: $medium;
 
   &:not(:last-child) {
     margin-bottom: remcalc(24);
