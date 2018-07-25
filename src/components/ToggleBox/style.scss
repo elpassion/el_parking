@@ -1,0 +1,41 @@
+.toggleBox {
+  padding: remcalc(22);
+  font-size: remcalc(14);
+  line-height: remcalc(19);
+  color: $cornflowerblue;
+  border: 1px solid rgba($white, .2);
+  border-radius: $radius;
+
+  .bold {
+    color: $white;
+    font-weight: $medium;
+  }
+}
+
+.toggleBoxText {
+  &:last-of-type {
+    margin: 0 0 remcalc(4);
+  }
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  color: $robinblue;
+}
+
+.toggleButtonText {
+  margin: 0 remcalc(6) 0 0;
+}
+
+.toggleButtonIcon {
+  transform: rotateX(180deg);
+  transition: transform .4s $cubic;
+}
+
+.isExpanded {
+  .toggleButtonIcon {
+    transform: rotateX(0);
+  }
+}
