@@ -11,7 +11,7 @@ import style from './style.scss';
 @observer
 export default class Interested extends Component {
   state = {
-    placeNumber: 2026,
+    placeNumber: 1.337,
   };
 
   reservePlace = (evt) => {

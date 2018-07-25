@@ -21,6 +21,7 @@ $LINE_ROTATION: 31deg !default;
 
 .graySubheader {
   font-size: remcalc(17);
+  font-weight: $regular;
   line-height: remcalc(25);
   color: $lightgray;
 }
