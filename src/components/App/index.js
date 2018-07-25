@@ -3,7 +3,6 @@ import Match from 'preact-router/match';
 import WebFont from 'webfontloader';
 import Home from '../../routes/home';
 import Interested from '../../routes/interested';
-import noPlaceLeft from '../../routes/noplace';
 import Header from '../Header';
 import Wrapper from '../Wrapper';
 import ProtectedRoute from '../ProtectedRoute';
@@ -26,7 +25,6 @@ const App = () => (
         <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
-          <ProtectedRoute path={routeMap.no_place_left} component={noPlaceLeft} />
         </Router>
       </Wrapper>
     )}
