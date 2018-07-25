@@ -4,28 +4,32 @@
   background: linear-gradient(135deg, $governorbay 0%, $darkblue 110%);
 
   .container {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    width: 100%;
-    max-width: 540px;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 32px;
-    flex-direction: column;
-    justify-content: space-between;
 
     @include breakpoint(small) {
       border: 1px solid rgba($gray, .2);
       border-top: 0;
       border-bottom: 0;
     }
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 540px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: remcalc(44) remcalc(28);
+    overflow: hidden;
   }
 
-  /* Modifiers */
   &.isHome {
     .container {
       justify-content: center;
     }
+  }
+
+  &.isWhite {
+    background: linear-gradient(135deg, $white 0%, $lightblue 110%);
   }
 }
