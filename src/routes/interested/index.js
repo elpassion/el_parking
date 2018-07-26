@@ -1,6 +1,6 @@
 import { Component } from 'preact';
-import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
+import classNames from 'classnames';
 import Heading from '../../components/Heading';
 import Hint from '../../components/Hint';
 import Button from '../../components/Button/index';
