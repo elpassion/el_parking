@@ -1,9 +1,9 @@
 import { Component } from 'preact';
-import Heading from '../../components/Heading';
 import Button from '../../components/Button/index';
+import Heading from '../../components/Heading';
 import Hint from '../../components/Hint';
-import ToggleBox from '../../components/ToggleBox';
 import PlaceNumber from '../../components/PlaceNumber';
+import ToggleBox from '../../components/ToggleBox';
 
 import style from './style.scss';
 

@@ -4,9 +4,8 @@
   font-weight: $medium;
   line-height: remcalc(26);
 
-  &.blue {
-    color: $cornflowerblue;
-  }
+  &.blue { color: $cornflowerblue; }
+  &.gray { color: $lightgray; }
 
   .hintLine {
     display: block;

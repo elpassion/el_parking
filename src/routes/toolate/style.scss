@@ -1,0 +1,67 @@
+$SPLASH_CONTAINER_WIDTH: 260 !default;
+$SPLASH_CONTAINER_HEIGHT: 180 !default;
+$LINE_MAX_WIDTH: 768 !default;
+$LINE_ROTATION: 31deg !default;
+$HORIZONTAL_PADDING: remcalc($container-horizontal-padding * 2) !default;
+$LOADER_HEIGHT: 8 !default;
+
+.tooLateContainer {
+  position: relative;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tooLateImageContainer {
+  position: relative;
+  width: 100%;
+  max-width: remcalc($SPLASH_CONTAINER_WIDTH);
+  margin: auto auto remcalc(60);
+
+  &:before,
+  &:after {
+    position: absolute;
+    z-index: $z-default;
+    display: block;
+    width: remcalc($LINE_MAX_WIDTH);
+    height: 1px;
+    background: rgba($deepblue, .1);
+    content: '';
+    transform: rotate($LINE_ROTATION);
+  }
+
+  &:before {
+    bottom: remcalc(170);
+    left: remcalc(-570);
+  }
+
+  &:after {
+    bottom: remcalc(40);
+    left: remcalc(130);
+  }
+}
+
+.loaderWrapper {
+  position: absolute;
+  bottom: remcalc(-$container-vertical-padding);
+  left: remcalc(-$container-horizontal-padding);
+  width: calc(100% + #{$HORIZONTAL_PADDING});
+  height: remcalc($LOADER_HEIGHT);
+  overflow: hidden;
+  background: $white;
+}
+
+.loaderIndicator {
+  width: 1%;
+  height: remcalc($LOADER_HEIGHT);
+  background: $deepblue;
+  border-radius: 0 $radius $radius 0;
+}
+
+.isLoading {
+  .loaderIndicator {
+    width: 100%;
+    transition: width 5s $cubic;
+  }
+}

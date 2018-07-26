@@ -1,9 +1,9 @@
 import { Component } from 'preact';
-import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
+import Button from '../../components/Button/index';
+import classNames from 'classnames';
 import Heading from '../../components/Heading';
 import Hint from '../../components/Hint';
-import Button from '../../components/Button/index';
 import PlaceNumber from '../../components/PlaceNumber';
 
 import style from './style.scss';
@@ -77,13 +77,11 @@ export default class Interested extends Component {
     );
   };
 
-  render () {
-    const { placeNumber } = this.state;
-    const { appStore } = this.props;
+  render (props, state) {
     return (
-      appStore.placeIsAvailable
-        ? this.renderAvailablePlaceView(placeNumber)
-        : this.renderPlaceRegistration(placeNumber)
+      this.props.appStore.placeIsAvailable
+        ? this.renderAvailablePlaceView(this.state.placeNumber)
+        : this.renderPlaceRegistration(this.state.placeNumber)
     );
   }
 }

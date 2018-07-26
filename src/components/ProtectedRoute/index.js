@@ -1,6 +1,6 @@
 import { Component } from 'preact';
-import { route } from 'preact-router';
 import { inject } from 'mobx-react';
+import { route } from 'preact-router';
 
 @inject('appStore')
 export default class ProtectedRoute extends Component {

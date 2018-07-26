@@ -1,11 +1,8 @@
-import classNames from 'classnames';
-
 import style from '../style.scss';
 
 const GrayCar = ({ className }) => {
-  const containerClasses = classNames(style.svgWrapper, className);
   return (
-    <div className={containerClasses}>
+    <div className={className}>
       <svg
         className={style.splashImage}
         width='215'
