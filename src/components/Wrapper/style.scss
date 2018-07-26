@@ -16,7 +16,7 @@
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-    padding: remcalc(44) remcalc(28);
+    padding: remcalc($container-vertical-padding) remcalc($container-horizontal-padding);
 
     @include breakpoint(small) {
       max-width: remcalc(420);
