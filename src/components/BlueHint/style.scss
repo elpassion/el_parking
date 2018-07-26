@@ -1,0 +1,10 @@
+.blueHint {
+  margin: 0 0 remcalc(16);
+  font-size: remcalc(17);
+  line-height: remcalc(26);
+  color: $cornflowerblue;
+
+  .blueHintLine {
+    display: block;
+  }
+}

@@ -1,8 +1,8 @@
-$HEADER_MAX_SIZE: 84 !default;
+$HEADER_MAX_SIZE: 44 !default;
 
 .header {
   display: flex;
-  flex: 0 1 remcalc($HEADER_MAX_SIZE);
+  flex: 1 1 remcalc($HEADER_MAX_SIZE);
   margin: 0 0 remcalc($HEADER_MAX_SIZE / 6);
   font-size: remcalc(17);
 

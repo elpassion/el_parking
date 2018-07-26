@@ -1,11 +1,15 @@
 import { Component } from 'preact';
 import Heading from '../../components/Heading';
 import Button from '../../components/Button/index';
+import BlueHint from '../../components/BlueHint';
+import ToggleBox from '../../components/ToggleBox';
 import PlaceNumber from '../../components/PlaceNumber';
+
+import style from './style.scss';
 
 export default class YourPlace extends Component {
   state = {
-    placeNumber: 1337,
+    placeNumber: 1.337,
     placeIsAvailable: false,
   };
 
@@ -22,7 +26,11 @@ export default class YourPlace extends Component {
   renderPlaceAvailable = placeNumber => (
     <div className='sth'>
       <Heading> Twoje miejsce: </Heading>
-      <PlaceNumber number={placeNumber} />
+      <PlaceNumber reserved number={placeNumber} />
+      <BlueHint
+        firstLine='Nie przyjedziesz dziś'
+        secondLine='do pracy samochodzem?'
+      />
       <Button
         Primary
         href='/'
@@ -30,6 +38,7 @@ export default class YourPlace extends Component {
       >
         Zwolnij miejsce
       </Button>
+      <ToggleBox />
     </div>
   );
 

@@ -4,7 +4,7 @@ $FONT_SIZE: 92 !default;
 .wrapper {
   width: 100%;
   height: remcalc($BOX_HEIGHT);
-  margin: 0 auto remcalc(36);
+  margin: 0 auto remcalc(28);
   font-size: remcalc($FONT_SIZE);
   line-height: remcalc($BOX_HEIGHT + 10);
   color: $white;

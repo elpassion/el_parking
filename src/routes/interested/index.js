@@ -2,6 +2,7 @@ import { Component } from 'preact';
 import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
 import Heading from '../../components/Heading';
+import BlueHint from '../../components/BlueHint';
 import Button from '../../components/Button/index';
 import PlaceNumber from '../../components/PlaceNumber';
 
@@ -60,14 +61,10 @@ export default class Interested extends Component {
           <PlaceNumber reserved number={placeNumber} />
         </div>
         <div>
-          <p className={style.blueHint}>
-            <span className={style.blueHintLine}>
-              Jednak nie przyjedziesz?
-            </span>
-            <span className={style.blueHintLine}>
-              Daj skorzystać komuś innemu.
-            </span>
-          </p>
+          <BlueHint
+            firstLine='Jednak nie przyjedziesz?'
+            secondLine='Daj skorzystać komuś innemu.'
+          />
           <Button
             Primary
             href='/'
