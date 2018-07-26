@@ -18,7 +18,7 @@ export default class YourPlace extends Component {
   };
 
   renderPlaceAvailable = placeNumber => (
-    <div>
+    <div className={style.currentPlaceWrapper}>
       <Heading>
         Twoje miejsce:
       </Heading>
