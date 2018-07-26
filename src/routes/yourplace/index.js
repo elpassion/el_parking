@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import Heading from '../../components/Heading';
 import Button from '../../components/Button/index';
-import BlueHint from '../../components/BlueHint';
+import Hint from '../../components/Hint';
 import ToggleBox from '../../components/ToggleBox';
 import PlaceNumber from '../../components/PlaceNumber';
 
@@ -21,9 +21,9 @@ export default class YourPlace extends Component {
     <div>
       <Heading> Twoje miejsce: </Heading>
       <PlaceNumber reserved number={placeNumber} />
-      <BlueHint
-        firstLine='Nie przyjedziesz dziś'
-        secondLine='do pracy samochodzem?'
+      <Hint
+        text={['Nie przyjedziesz dziś', 'do pracy samochodzem?']}
+        color='blue'
       />
       <Button
         Primary
@@ -42,9 +42,9 @@ export default class YourPlace extends Component {
         <PlaceNumber disabled number={placeNumber} />
       </div>
       <div className={style.placeSection}>
-        <BlueHint
-          firstLine='Jednak musisz dziś przyjechać'
-          secondLine=' do pracy samochodem?'
+        <Hint
+          text={['Jednak musisz dziś przyjechać', 'do pracy samochodem?']}
+          color='blue'
         />
         <Button
           Primary

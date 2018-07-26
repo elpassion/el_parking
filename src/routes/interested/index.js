@@ -2,7 +2,7 @@ import { Component } from 'preact';
 import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
 import Heading from '../../components/Heading';
-import BlueHint from '../../components/BlueHint';
+import Hint from '../../components/Hint';
 import Button from '../../components/Button/index';
 import PlaceNumber from '../../components/PlaceNumber';
 
@@ -61,9 +61,9 @@ export default class Interested extends Component {
           <PlaceNumber reserved number={placeNumber} />
         </div>
         <div>
-          <BlueHint
-            firstLine='Jednak nie przyjedziesz?'
-            secondLine='Daj skorzystać komuś innemu.'
+          <Hint
+            text={['Jednak nie przyjedziesz?', 'Daj skorzystać komuś innemu.']}
+            color='blue'
           />
           <Button
             Primary
