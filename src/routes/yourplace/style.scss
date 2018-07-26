@@ -1,1 +1,10 @@
-//
+.placeSectionWrapper {
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .placeSection {
+    flex: 0 0 auto;
+  }
+}

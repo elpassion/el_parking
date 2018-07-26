@@ -13,18 +13,12 @@ export default class YourPlace extends Component {
     placeIsAvailable: false,
   };
 
-  componentDidMount () {
-    // Get Current User Place and push to state
-  }
-
-  releasePlace = () => {
-    this.setState({
-      placeIsAvailable: true,
-    });
+  togglePlaceAvailability = () => {
+    this.setState(prevState => ({ placeIsAvailable: !prevState.placeIsAvailable }));
   };
 
   renderPlaceAvailable = placeNumber => (
-    <div className='sth'>
+    <div>
       <Heading> Twoje miejsce: </Heading>
       <PlaceNumber reserved number={placeNumber} />
       <BlueHint
@@ -33,8 +27,7 @@ export default class YourPlace extends Component {
       />
       <Button
         Primary
-        href='/'
-        onClick={this.releasePlace}
+        onClick={this.togglePlaceAvailability}
       >
         Zwolnij miejsce
       </Button>
@@ -43,15 +36,23 @@ export default class YourPlace extends Component {
   );
 
   renderPlaceReleased = placeNumber => (
-    <div className='sth'>
-      <Heading> Zwolniłeś miejsce na jeden dzień </Heading>
-      <PlaceNumber number={placeNumber} />
-      <Button
-        Primary
-        href='/'
-      >
-        Odwołaj zwolnienie miejsca
-      </Button>
+    <div className={style.placeSectionWrapper}>
+      <div className={style.placeSection}>
+        <Heading> Zwolniłeś miejsce na jeden dzień </Heading>
+        <PlaceNumber disabled number={placeNumber} />
+      </div>
+      <div className={style.placeSection}>
+        <BlueHint
+          firstLine='Jednak musisz dziś przyjechać'
+          secondLine=' do pracy samochodem?'
+        />
+        <Button
+          Primary
+          onClick={this.togglePlaceAvailability}
+        >
+          Odwołaj zwolnienie miejsca
+        </Button>
+      </div>
     </div>
   );
 
