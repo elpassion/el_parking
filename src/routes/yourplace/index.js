@@ -19,7 +19,9 @@ export default class YourPlace extends Component {
 
   renderPlaceAvailable = placeNumber => (
     <div>
-      <Heading> Twoje miejsce: </Heading>
+      <Heading>
+        Twoje miejsce:
+      </Heading>
       <PlaceNumber reserved number={placeNumber} />
       <Hint
         text={['Nie przyjedziesz dziś', 'do pracy samochodzem?']}
@@ -38,7 +40,9 @@ export default class YourPlace extends Component {
   renderPlaceReleased = placeNumber => (
     <div className={style.placeSectionWrapper}>
       <div className={style.placeSection}>
-        <Heading> Zwolniłeś miejsce na jeden dzień </Heading>
+        <Heading>
+          Zwolniłeś miejsce na jeden dzień
+        </Heading>
         <PlaceNumber disabled number={placeNumber} />
       </div>
       <div className={style.placeSection}>
@@ -56,8 +60,7 @@ export default class YourPlace extends Component {
     </div>
   );
 
-  render () {
-    const { state } = this;
+  render (props, state) {
     return (
       !state.placeIsAvailable
         ? this.renderPlaceAvailable(state.placeNumber)

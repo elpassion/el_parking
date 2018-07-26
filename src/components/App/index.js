@@ -24,7 +24,7 @@ const App = () => (
       <Wrapper isHome={isHome} isWhite={url === routeMap.noPlaceLeft} id='app'>
         {!isHome && (
           <Header
-            isDark={url === routeMap.interested || url === routeMap.yourPlace}
+            isDark={[routeMap.interested, routeMap.yourPlace].includes(url)}
             isLight={url === routeMap.noPlaceLeft}
           />
         )}
