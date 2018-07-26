@@ -2,9 +2,10 @@ import { Router } from 'preact-router';
 import Match from 'preact-router/match';
 import WebFont from 'webfontloader';
 import Home from '../../routes/home';
-import Interested from '../../routes/interested';
 import Header from '../Header';
 import Wrapper from '../Wrapper';
+import Interested from '../../routes/interested';
+import NoPlaceLeft from '../../routes/noplace';
 import ProtectedRoute from '../ProtectedRoute';
 import routeMap from '../../utils/routeMap';
 
@@ -30,6 +31,7 @@ const App = () => (
         <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
+          <ProtectedRoute path={routeMap.noPlaceLeft} component={NoPlaceLeft} />
         </Router>
       </Wrapper>
     )}

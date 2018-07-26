@@ -1,9 +1,11 @@
-$HEADER_MAX_SIZE: 84 !default;
+$HEADER_MAX_SIZE: 64 !default;
 
 .header {
+  position: relative;
+  z-index: $z-top;
   display: flex;
   flex: 0 1 remcalc($HEADER_MAX_SIZE);
-  margin: 0 0 remcalc($HEADER_MAX_SIZE / 6);
+  margin: 0 0 remcalc($HEADER_MAX_SIZE / 8);
   font-size: remcalc(17);
 
   .headerDate {
@@ -38,5 +40,9 @@ $HEADER_MAX_SIZE: 84 !default;
     .powerIconFill {
       fill: $governorbay;
     }
+  }
+
+  @media only screen and (min-height: 667px) {
+    flex: 0 1 remcalc($HEADER_MAX_SIZE * 1.8);
   }
 }
