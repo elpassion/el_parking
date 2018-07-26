@@ -2,7 +2,8 @@ import { Component } from 'preact';
 import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
 import Heading from '../../components/Heading';
-import Button from '../../components/Button';
+import Hint from '../../components/Hint';
+import Button from '../../components/Button/index';
 import PlaceNumber from '../../components/PlaceNumber';
 
 import style from './style.scss';
@@ -60,14 +61,10 @@ export default class Interested extends Component {
           <PlaceNumber reserved number={placeNumber} />
         </div>
         <div>
-          <p className={style.blueHint}>
-            <span className={style.blueHintLine}>
-              Jednak nie przyjedziesz?
-            </span>
-            <span className={style.blueHintLine}>
-              Daj skorzystać komuś innemu.
-            </span>
-          </p>
+          <Hint
+            text={['Jednak nie przyjedziesz?', 'Daj skorzystać komuś innemu.']}
+            color='blue'
+          />
           <Button
             Primary
             href='/'
@@ -80,7 +77,7 @@ export default class Interested extends Component {
     );
   };
 
-  render() {
+  render () {
     const { placeNumber } = this.state;
     const { appStore } = this.props;
     return (

@@ -5,6 +5,7 @@ import Home from '../../routes/home';
 import Header from '../Header';
 import Wrapper from '../Wrapper';
 import Interested from '../../routes/interested';
+import YourPlace from '../../routes/yourplace';
 import NoPlaceLeft from '../../routes/noplace';
 import ProtectedRoute from '../ProtectedRoute';
 import routeMap from '../../utils/routeMap';
@@ -24,13 +25,14 @@ const App = () => (
       <Wrapper isHome={isHome} isWhite={url === routeMap.noPlaceLeft} id='app'>
         {!isHome && (
           <Header
-            isDark={url === routeMap.interested}
+            isDark={[routeMap.interested, routeMap.yourPlace].includes(url)}
             isLight={url === routeMap.noPlaceLeft}
           />
         )}
         <Router>
           <Home path={routeMap.home} default />
           <ProtectedRoute path={routeMap.interested} component={Interested} />
+          <ProtectedRoute path={routeMap.yourPlace} component={YourPlace} />
           <ProtectedRoute path={routeMap.noPlaceLeft} component={NoPlaceLeft} />
         </Router>
       </Wrapper>

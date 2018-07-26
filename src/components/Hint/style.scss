@@ -1,0 +1,14 @@
+.hint {
+  margin: 0 0 remcalc(16);
+  font-size: remcalc(17);
+  font-weight: $medium;
+  line-height: remcalc(26);
+
+  &.blue {
+    color: $cornflowerblue;
+  }
+
+  .hintLine {
+    display: block;
+  }
+}

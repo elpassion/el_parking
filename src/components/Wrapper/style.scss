@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background: linear-gradient(135deg, $governorbay 0%, $darkblue 110%);
 
@@ -15,13 +15,12 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
-    max-height: remcalc(667);
     margin: 0 auto;
     padding: remcalc(44) remcalc(28);
 
     @include breakpoint(small) {
       max-width: remcalc(420);
+      max-height: remcalc(667);
       overflow: hidden;
       border: 1px solid rgba($gray, .2);
     }

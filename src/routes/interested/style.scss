@@ -7,15 +7,3 @@
     justify-content: space-between;
   }
 }
-
-.blueHint {
-  margin: 0 0 remcalc(24);
-  font-size: remcalc(17);
-  font-weight: $regular;
-  line-height: remcalc(26);
-  color: $cornflowerblue;
-
-  .blueHintLine {
-    display: block;
-  }
-}
