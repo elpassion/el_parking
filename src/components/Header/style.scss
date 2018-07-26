@@ -43,6 +43,6 @@ $HEADER_MAX_SIZE: 54 !default;
   }
 
   @media only screen and (min-height: 667px) {
-    flex: 0 1 remcalc($HEADER_MAX_SIZE * 1.8);
+    flex: 0 1 remcalc($HEADER_MAX_SIZE * 1.6);
   }
 }

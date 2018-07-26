@@ -1,7 +1,8 @@
-import Heading from '../../components/Heading';
-import Hint from '../../components/Hint';
 import BackCar from '../../components/Svg/BackCar';
 import GrayCar from '../../components/Svg/GrayCar';
+import Heading from '../../components/Heading';
+import Hint from '../../components/Hint';
+
 import style from './style.scss';
 
 const NoPlaceLeft = () => (

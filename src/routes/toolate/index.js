@@ -1,17 +1,15 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
+import classNames from 'classnames';
+import FrontCar from '../../components/Svg/FrontCar';
 import Heading from '../../components/Heading';
 import Hint from '../../components/Hint';
-import FrontCar from '../../components/Svg/FrontCar';
-import classNames from 'classnames';
 import routeMap from '../../utils/routeMap';
 
 import style from './style.scss';
 
 export default class TooLate extends Component {
-  state = {
-    startRedirecting: false,
-  };
+  state = { startRedirecting: false };
 
   componentDidMount () {
     const loaderWrapper = this.loaderWrapper;

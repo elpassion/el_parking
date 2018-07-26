@@ -1,12 +1,9 @@
-import classNames from 'classnames';
-
 import style from '../style.scss';
 
 const FrontCar = ({ className, LightBackground }) => {
-  const containerClasses = classNames(style.svgWrapper, className);
   return (
     LightBackground
-      ? (<div className={containerClasses}>
+      ? (<div className={className}>
         <svg
           className={style.splashImage}
           width='254'
@@ -159,7 +156,7 @@ const FrontCar = ({ className, LightBackground }) => {
           </g>
         </svg>
       </div>)
-      : (<div className={containerClasses}>
+      : (<div className={className}>
         <svg
           className={style.splashImage}
           width='254'

@@ -7,7 +7,5 @@ $HEADING_FONT_SIZE: 38 !default;
   font-weight: $light;
   color: $white;
 
-  &.color {
-    &Blue { color: $midblue; }
-  }
+  &.colorBlue { color: $midblue; }
 }
