@@ -22,7 +22,7 @@ if (typeof window !== 'undefined') {
   });
 }
 
-export default class App extends Component  {
+export default class App extends Component {
   state = {
     currentUrl: undefined,
   };
@@ -32,31 +32,28 @@ export default class App extends Component  {
   };
 
   render () {
+    const isHome = this.state.currentUrl === routeMap.home;
     return (
-      <Match path={routeMap.home}>
-        {({ matches: isHome, url }) => (
-          <Wrapper
-            id='app'
-            isHome={isHome}
-            isWhite={[routeMap.noPlaceLeft, routeMap.tooLate].includes(url)}
-          >
-            {!isHome && (
-              <Header
-                isDark={[routeMap.interested, routeMap.yourPlace].includes(url)}
-                isLight={[routeMap.noPlaceLeft, routeMap.tooLate].includes(url)}
-              />
-            )}
-            <Router onChange={this.handleRouteChange}>
-              <Home path={routeMap.home} />
-              <ProtectedRoute path={routeMap.interested} component={Interested} />
-              <ProtectedRoute path={routeMap.yourPlace} component={YourPlace} />
-              <ProtectedRoute path={routeMap.noPlaceLeft} component={NoPlaceLeft} />
-              <ProtectedRoute path={routeMap.tooLate} component={TooLate} />
-              <Redirect to={routeMap.home} default />
-            </Router>
-          </Wrapper>
+      <Wrapper
+        id='app'
+        isHome={isHome}
+        isWhite={[routeMap.noPlaceLeft, routeMap.tooLate].includes(this.state.currentUrl)}
+      >
+        {!isHome && (
+          <Header
+            isDark={[routeMap.interested, routeMap.yourPlace].includes(this.state.currentUrl)}
+            isLight={[routeMap.noPlaceLeft, routeMap.tooLate].includes(this.state.currentUrl)}
+          />
         )}
-      </Match>
+        <Router onChange={this.handleRouteChange}>
+          <Home path={routeMap.home} />
+          <ProtectedRoute path={routeMap.interested} component={Interested} />
+          <ProtectedRoute path={routeMap.yourPlace} component={YourPlace} />
+          <ProtectedRoute path={routeMap.noPlaceLeft} component={NoPlaceLeft} />
+          <ProtectedRoute path={routeMap.tooLate} component={TooLate} />
+          <Redirect to={routeMap.home} default />
+        </Router>
+      </Wrapper>
     );
   }
 };
