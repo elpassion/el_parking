@@ -29,7 +29,7 @@ export default class TooLate extends Component {
 
   render (props, state) {
     const loaderClasses = classNames(style.loaderWrapper, {
-      [style.isLoading]: state.startRedirecting
+      [style.isLoading]: state.startRedirecting,
     });
 
     return (
