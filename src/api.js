@@ -2,16 +2,19 @@
 import axios from 'axios';
 import { route } from 'preact-router';
 
-const HOST = 'localhost:3001';
-// const HOST = 'el-parking-api-staging.herokuapp.com';
+let HOST = '';
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+  HOST = process.env.PREACT_APP_API_URL_DEV;
+} else {
+  HOST = process.env.PREACT_APP_API_URL_PROD;
+}
 
 const api = axios.create({
-  // baseURL: `https://${HOST}/`,
-  baseURL: `http://${HOST}/`,
+  baseURL: HOST,
   withCredentials: true,
 });
 
-if (process.env.NODE_ENV === 'development') {
+const devInterceptors = () => {
   api.interceptors.response.use((resp) => {
     console.log(resp.config.url, resp.data);
     return resp;
@@ -23,14 +26,18 @@ if (process.env.NODE_ENV === 'development') {
       }
       return Promise.reject(error);
   });
-} else {
+};
+
+const prodInterceptors = () => {
   api.interceptors.response.use(
     (resp) => resp,
     (err) => {
       err.response.status === 401 && route('/');
       return Promise.reject(err);
   });
-}
+};
+
+process.env.NODE_ENV === 'development' ? devInterceptors() : prodInterceptors();
 
 const auth = {
   authenticate: data => api.post('/authenticate', data),
