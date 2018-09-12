@@ -1,35 +1,29 @@
 import { Component } from 'preact';
+import { inject, observer } from 'mobx-react';
+import { toJS } from 'mobx';
 import Button from '../../components/Button/index';
 import Heading from '../../components/Heading';
 import Hint from '../../components/Hint';
 import PlaceNumber from '../../components/PlaceNumber';
 import ToggleBox from '../../components/ToggleBox';
+import api from '../../api';
 
 import style from './style.scss';
 
-export default class YourPlace extends Component {
-  state = {
-    placeNumber: 1.337,
-    placeIsAvailable: false,
-  };
-
-  togglePlaceAvailability = () => {
-    this.setState(prevState => ({ placeIsAvailable: !prevState.placeIsAvailable }));
-  };
-
-  renderPlaceAvailable = placeNumber => (
+class YourPlace extends Component {
+  renderPlaceAvailable = () => (
     <div className={style.currentPlaceWrapper}>
       <Heading>
         Twoje miejsce:
       </Heading>
-      <PlaceNumber reserved number={placeNumber} />
+      <PlaceNumber reserved number={this.props.authStore.user.ownedParkingSpace} />
       <Hint
         text={['Nie przyjedziesz dziś', 'do pracy samochodzem?']}
         color='blue'
       />
       <Button
-        Primary
-        onClick={this.togglePlaceAvailability}
+        primary
+        onClick={this.props.appStore.sharePlace}
       >
         Zwolnij miejsce
       </Button>
@@ -37,13 +31,13 @@ export default class YourPlace extends Component {
     </div>
   );
 
-  renderPlaceReleased = placeNumber => (
+  renderPlaceReleased = () => (
     <div className={style.placeSectionWrapper}>
       <div className={style.placeSection}>
         <Heading>
           Zwolniłeś miejsce na jeden dzień
         </Heading>
-        <PlaceNumber disabled number={placeNumber} />
+        <PlaceNumber disabled number={this.props.authStore.user.ownedParkingSpace} />
       </div>
       <div className={style.placeSection}>
         <Hint
@@ -51,8 +45,8 @@ export default class YourPlace extends Component {
           color='blue'
         />
         <Button
-          Primary
-          onClick={this.togglePlaceAvailability}
+          primary
+          onClick={this.props.appStore.cancelSharing}
         >
           Odwołaj zwolnienie miejsca
         </Button>
@@ -60,11 +54,13 @@ export default class YourPlace extends Component {
     </div>
   );
 
-  render (props, state) {
+  render () {
     return (
-      !state.placeIsAvailable
-        ? this.renderPlaceAvailable(state.placeNumber)
-        : this.renderPlaceReleased(state.placeNumber)
+      this.props.authStore.user.releaseParkingSpace
+        ? this.renderPlaceReleased()
+        : this.renderPlaceAvailable()
     );
   }
 }
+
+export default inject('appStore', 'authStore')(observer(YourPlace));
