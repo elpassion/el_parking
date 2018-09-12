@@ -1,7 +1,6 @@
 import { Provider } from 'mobx-react';
 import { route } from 'preact-router';
 import Push from 'push.js';
-import { toJS } from 'mobx';
 import routeMap from './utils/routeMap';
 import store from './store/index';
 import App from './components/App';
