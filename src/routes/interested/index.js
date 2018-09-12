@@ -1,49 +1,35 @@
 import { Component } from 'preact';
 import { inject, observer } from 'mobx-react';
+import { route } from 'preact-router';
 import Button from '../../components/Button/index';
 import classNames from 'classnames';
 import Heading from '../../components/Heading';
 import Hint from '../../components/Hint';
 import PlaceNumber from '../../components/PlaceNumber';
+import api from '../../api';
+import routeMap from '../../utils/routeMap';
 
 import style from './style.scss';
 
 @inject('appStore')
 @observer
 export default class Interested extends Component {
-  state = {
-    placeNumber: 1.337,
-  };
-
-  reservePlace = (evt) => {
-    const { appStore } = this.props;
-    evt.preventDefault();
-    evt.stopPropagation();
-
-    appStore.reservePlace();
-  };
-
-  releasePlace = (evt) => {
-    const { appStore } = this.props;
-    evt.preventDefault();
-    evt.stopPropagation();
-
-    appStore.releasePlace();
-  };
+  componentDidMount = () => {
+    this.props.appStore.checkFreePlaces();
+  }
 
   renderAvailablePlaceView = placeNumber => (
     <div className={style.content}>
       <Heading> Zwolniło się miejsce:</Heading>
       <PlaceNumber number={placeNumber} />
       <Button
-        Primary
-        href='/'
-        onClick={this.reservePlace}
+        primary
+        onClick={this.props.appStore.reservePlace}
       >
         Rezerwuj
       </Button>
       <Button
-        Secondary
+        secondary
         href='/'
       >
         Ignoruj
@@ -66,9 +52,8 @@ export default class Interested extends Component {
             color='blue'
           />
           <Button
-            Primary
-            href='/'
-            onClick={this.releasePlace}
+            primary
+            onClick={this.props.appStore.cancelReservation}
           >
             Zwolnij miejsce
           </Button>
@@ -77,11 +62,13 @@ export default class Interested extends Component {
     );
   };
 
-  render (props, state) {
-    return (
-      this.props.appStore.placeIsAvailable
-        ? this.renderAvailablePlaceView(this.state.placeNumber)
-        : this.renderPlaceRegistration(this.state.placeNumber)
-    );
+  render () {
+    const { authStore: { user }, appStore: { availableParkingPlace } } = this.props;
+    if (user.borrowedParkingSpace) {
+      return this.renderPlaceRegistration(user.borrowedParkingSpace);
+    }
+    if (availableParkingPlace) {
+      return this.renderAvailablePlaceView(availableParkingPlace);
+    }
   }
 }
