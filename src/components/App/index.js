@@ -9,11 +9,12 @@ import ProtectedRoute from '../ProtectedRoute';
 import Redirect from '../Redirect';
 import routeMap from '../../utils/routeMap';
 import TooLate from '../../routes/toolate';
-import WebFont from 'webfontloader';
 import Wrapper from '../Wrapper';
 import YourPlace from '../../routes/yourplace';
 
 if (typeof window !== 'undefined') {
+  const WebFont = require('webfontloader');
+
   WebFont.load({
     custom: {
       families: ['Gilroy:n1,n3,n5'],

@@ -1,3 +1,4 @@
+import envVars from 'preact-cli-plugin-env-vars';
 const path = require('path');
 
 export default (config, env, helpers) => {
@@ -12,4 +13,6 @@ export default (config, env, helpers) => {
         resources: path.resolve(__dirname, './src/style/index.scss'),
       },
     });
+
+  envVars(config, env, helpers);
 };
