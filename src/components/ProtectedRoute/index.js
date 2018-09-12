@@ -2,17 +2,17 @@ import { Component } from 'preact';
 import { inject } from 'mobx-react';
 import { route } from 'preact-router';
 
-@inject('appStore')
+@inject('authStore')
 export default class ProtectedRoute extends Component {
   componentWillMount () {
-    const { redirectPath, appStore: { isAuthenticated } } = this.props;
+    const { redirectPath, authStore: { user } } = this.props;
 
-    if (!isAuthenticated) route(redirectPath || '/');
+    if (!user) route(redirectPath || '/');
   }
 
   render ({ component: Route, ...props }) {
-    const { appStore: { isAuthenticated } } = this.props;
+    const { authStore: { user } } = this.props;
 
-    return isAuthenticated && <Route {...props} />;
+    return user && <Route {...props} />;
   }
 }
