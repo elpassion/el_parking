@@ -4,16 +4,16 @@ import classNames from 'classnames';
 import style from './style.scss';
 
 const Button = ({
-  Primary, Secondary, className, href, children, onClick,
+  primary, secondary, className, href, children, onClick,
 }) => {
   const buttonClass = classNames(style.button, className, {
-    [style.primary]: Primary,
-    [style.secondary]: Secondary,
+    [style.primary]: primary,
+    [style.secondary]: secondary,
   });
 
   return (
     onClick ? (
-      <button type='submit' className={buttonClass} onClick={onClick}>
+      <button className={buttonClass} onClick={onClick}>
         {children}
       </button>
     ) : (
