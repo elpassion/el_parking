@@ -1,5 +1,7 @@
-import AppStore from './app';
+import appStore from './app';
+import authStore from './auth';
 
 export default {
-  appStore: new AppStore(),
+  appStore,
+  authStore,
 };
