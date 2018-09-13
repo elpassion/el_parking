@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import style from './style.scss';
 
 const PlaceNumber = ({
-  number, reserved, disabled, className,
+  number, reserved, disabled, className, ...props
 }) => {
   const numberClasses = classNames(style.wrapper, className, {
     [style.reserved]: reserved,
@@ -11,7 +11,7 @@ const PlaceNumber = ({
   });
 
   return (
-    <div className={numberClasses}>
+    <div className={numberClasses} {...props}>
       {number}
     </div>
   );
