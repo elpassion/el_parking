@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "serve": "preact build --no-prerender --template src/index.html && preact serve --server superstatic --port 3000",
-    "build": "preact build --no-prerender --template src/index.html",
+    "serve": "preact build --service-worker --no-prerender --template src/index.html && preact serve",
+    "build": "preact build --service-worker --no-prerender --template src/index.html",
     "dev": "preact watch --template src/index.html -p 3000",
     "lint": "eslint src",
     "test": "jest ./tests"
@@ -53,7 +53,6 @@
     "preact-router": "^2.5.7",
     "push.js": "^1.0.7",
     "socket.io-client": "^2.1.1",
-    "superstatic": "^6.0.1",
     "webfontloader": "^1.6.28"
   },
   "jest": {
