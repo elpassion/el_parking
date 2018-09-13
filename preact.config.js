@@ -14,5 +14,6 @@ export default (config, env, helpers) => {
       },
     });
 
+  config.externals = ['fs'];
   envVars(config, env, helpers);
 };

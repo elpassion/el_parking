@@ -6,6 +6,7 @@ import store from './store/index';
 import App from './components/App';
 
 import io from 'socket.io-client';
+require('dotenv').config();
 
 const socket = io.connect(
   (!process.env.NODE_ENV || process.env.NODE_ENV === 'development')
