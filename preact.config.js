@@ -14,5 +14,8 @@ export default (config, env, helpers) => {
       },
     });
 
+  config.node = {
+    fs: 'empty',
+  };
   envVars(config, env, helpers);
 };
