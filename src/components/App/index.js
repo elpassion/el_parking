@@ -11,6 +11,7 @@ import routeMap from '../../utils/routeMap';
 import TooLate from '../../routes/toolate';
 import Wrapper from '../Wrapper';
 import YourPlace from '../../routes/yourplace';
+import Settings from '../../routes/settings';
 
 if (typeof window !== 'undefined') {
   const WebFont = require('webfontloader');
@@ -42,7 +43,10 @@ export default class App extends Component {
       >
         {!isHome && (
           <Header
-            isDark={[routeMap.interested, routeMap.yourPlace].includes(this.state.currentUrl)}
+            isDark={
+              [routeMap.interested, routeMap.yourPlace, routeMap.settings]
+                .includes(this.state.currentUrl)
+            }
             isLight={[routeMap.noPlaceLeft, routeMap.tooLate].includes(this.state.currentUrl)}
           />
         )}
@@ -52,6 +56,7 @@ export default class App extends Component {
           <ProtectedRoute path={routeMap.yourPlace} component={YourPlace} />
           <ProtectedRoute path={routeMap.noPlaceLeft} component={NoPlaceLeft} />
           <ProtectedRoute path={routeMap.tooLate} component={TooLate} />
+          <ProtectedRoute path={routeMap.settings} component={Settings} />
           <Redirect to={routeMap.home} default />
         </Router>
       </Wrapper>

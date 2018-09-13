@@ -21,6 +21,14 @@ $HEADER_MAX_SIZE: 54 !default;
     margin: 0 0 0 auto;
   }
 
+  .powerIcon {
+    cursor: pointer;
+
+    &:active {
+      opacity: .6;
+    }
+  }
+
   /* Themes */
   &.isDark {
     .dateToday {
