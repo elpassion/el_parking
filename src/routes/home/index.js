@@ -20,10 +20,16 @@ class Home extends Component {
   }
 
   googleSignIn = (e) => {
+    let clientId;
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+      clientId = process.env.GOOGLE_CLIENT_ID_DEV;
+    } else {
+      clientId = process.env.GOOGLE_CLIENT_ID_PROD;
+    }
     const { authStore } = this.props;
     gapi.load('auth2', () => {
       gapi.auth2.init({
-        client_id: '182832041414-bqv4iaaso8q2oo342i71ftf5uugi3cs7.apps.googleusercontent.com',
+        client_id: clientId,
         cookiepolicy: 'single_host_origin',
       })
       .then((auth2) => {
