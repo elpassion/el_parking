@@ -22,9 +22,9 @@ class Home extends Component {
   googleSignIn = (e) => {
     let clientId;
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-      clientId = process.env.GOOGLE_CLIENT_ID_DEV;
+      clientId = process.env.PREACT_APP_CLIENT_ID_DEV;
     } else {
-      clientId = process.env.GOOGLE_CLIENT_ID_PROD;
+      clientId = process.env.PREACT_APP_CLIENT_ID_PROD;
     }
     const { authStore } = this.props;
     gapi.load('auth2', () => {
