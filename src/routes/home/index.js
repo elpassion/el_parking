@@ -17,19 +17,13 @@ class Home extends Component {
     if (authStore.user) {
       authStore.initialUserRedirect();
     }
-  }
+  };
 
   googleSignIn = (e) => {
-    let clientId;
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-      clientId = process.env.PREACT_APP_CLIENT_ID_DEV;
-    } else {
-      clientId = process.env.PREACT_APP_CLIENT_ID_PROD;
-    }
     const { authStore } = this.props;
     gapi.load('auth2', () => {
       gapi.auth2.init({
-        client_id: clientId,
+        client_id: process.env.PREACT_APP_CLIENT_ID,
         cookiepolicy: 'single_host_origin',
       })
       .then((auth2) => {
@@ -41,7 +35,7 @@ class Home extends Component {
               });
       });
     });
-  }
+  };
 
   render () {
     return (
