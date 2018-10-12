@@ -9,9 +9,7 @@ import io from 'socket.io-client';
 require('dotenv').config();
 
 const socket = io.connect(
-  (!process.env.NODE_ENV || process.env.NODE_ENV === 'development')
-    ? process.env.PREACT_APP_API_URL_DEV
-    : process.env.PREACT_APP_API_URL_PROD,
+  process.env.PREACT_APP_API_URL,
   {
     transports: ['websocket'],
     reconnection: false,
