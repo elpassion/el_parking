@@ -47,6 +47,11 @@ socket.on('tenantCancel', (ownerParkingSpaceNumber) => {
   }
 });
 
+socket.on('resetReservations', () => {
+  store.appStore.resetReservations();
+  route(routeMap.home);
+});
+
 export default () => (
   <Provider {...store}>
     <App />
