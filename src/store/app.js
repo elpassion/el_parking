@@ -16,7 +16,7 @@ class AppStore {
       .catch(err => {
         err.response.status === 422 && route(routeMap.tooLate);
       });
-  }
+  };
 
   @action cancelReservation = () => {
     api.tenant.cancelReservation()
@@ -24,7 +24,7 @@ class AppStore {
         authStore.setUser(res.data.user);
         this.checkFreePlaces();
       });
-  }
+  };
 
   @action checkFreePlaces = () => {
     api.tenant.parkingStatus()
@@ -43,10 +43,17 @@ class AppStore {
       .catch(() => {
         route(routeMap.tooLate);
       });
-  }
+  };
 
   @action cancelSharing = () => {
     api.owner.cancelSharing()
+      .then(res => {
+        authStore.setUser(res.data.user);
+      });
+  };
+
+  @action resetReservations = () => {
+    api.user.details()
       .then(res => {
         authStore.setUser(res.data.user);
       });
