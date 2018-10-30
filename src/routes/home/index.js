@@ -17,13 +17,13 @@ class Home extends Component {
     if (authStore.user) {
       authStore.initialUserRedirect();
     }
-  }
+  };
 
   googleSignIn = (e) => {
     const { authStore } = this.props;
     gapi.load('auth2', () => {
       gapi.auth2.init({
-        client_id: '182832041414-bqv4iaaso8q2oo342i71ftf5uugi3cs7.apps.googleusercontent.com',
+        client_id: process.env.PREACT_APP_CLIENT_ID,
         cookiepolicy: 'single_host_origin',
       })
       .then((auth2) => {
@@ -35,7 +35,7 @@ class Home extends Component {
               });
       });
     });
-  }
+  };
 
   render () {
     return (
