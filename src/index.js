@@ -4,16 +4,9 @@ import Push from 'push.js';
 import routeMap from './utils/routeMap';
 import store from './store/index';
 import App from './components/App';
+import socket from './client';
 
-import io from 'socket.io-client';
 require('dotenv').config();
-
-const socket = io.connect(
-  process.env.PREACT_APP_API_URL,
-  {
-    transports: ['websocket'],
-    reconnection: false,
-});
 
 socket.on('ownerShared', () => {
   if (store.authStore.isUserTenant && !store.authStore.user.borrowedParkingSpace) {

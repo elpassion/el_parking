@@ -7,6 +7,7 @@ import {
 import { route } from 'preact-router';
 import api from '../api';
 import routeMap from '../utils/routeMap';
+import socket from '../client';
 
 class AuthStore {
   constructor () {
@@ -64,6 +65,7 @@ class AuthStore {
   @action logout = () => {
     this.user = null;
     this.setToken();
+    socket.disconnect();
     route('/');
   }
 }
