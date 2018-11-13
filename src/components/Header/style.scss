@@ -21,7 +21,11 @@ $HEADER_MAX_SIZE: 54 !default;
     margin: 0 0 0 auto;
   }
 
-  .powerIcon {
+  .icon + .icon {
+    margin-left: 3rem
+  }
+
+  .powerIcon, .settingsIcon {
     cursor: pointer;
 
     &:active {
@@ -35,7 +39,7 @@ $HEADER_MAX_SIZE: 54 !default;
       color: $cornflowerblue;
     }
 
-    .powerIconFill {
+    .powerIconFill, .settingsIconFill {
       fill: #fff;
     }
   }
@@ -45,7 +49,7 @@ $HEADER_MAX_SIZE: 54 !default;
       color: $lightgray;
     }
 
-    .powerIconFill {
+    .powerIconFill, .settingsIconFill {
       fill: $governorbay;
     }
   }
