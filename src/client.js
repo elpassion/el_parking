@@ -4,7 +4,9 @@ const socket = io.connect(
   process.env.PREACT_APP_API_URL,
   {
     transports: ['websocket'],
-    reconnection: false,
+    reconnection: true,
+    reconnectionAttempts: 100,
+    reconnectionDelay: 60000,
 });
 
 export default socket;
