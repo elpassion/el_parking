@@ -63,6 +63,7 @@ class AuthStore {
   }
 
   @action logout = () => {
+    gapi.auth2.getAuthInstance().disconnect(); // eslint-disable-line
     this.user = null;
     this.setToken();
     socket.disconnect();
