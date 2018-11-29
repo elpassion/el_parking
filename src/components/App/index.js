@@ -29,6 +29,15 @@ export default class App extends Component {
     currentUrl: undefined,
   };
 
+  componentDidMount = () => {
+    gapi.load('auth2', () => { // eslint-disable-line no-undef
+      gapi.auth2.init({ // eslint-disable-line no-undef
+        client_id: process.env.PREACT_APP_CLIENT_ID,
+        cookiepolicy: 'single_host_origin',
+      });
+    });
+  }
+
   handleRouteChange = (e) => {
     this.setState({ currentUrl: e.url });
   };
