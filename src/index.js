@@ -5,6 +5,7 @@ import routeMap from './utils/routeMap';
 import store from './store/index';
 import App from './components/App';
 import socket from './client';
+import './pwacompat.js';
 
 require('dotenv').config();
 
