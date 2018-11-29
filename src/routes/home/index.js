@@ -19,7 +19,7 @@ class Home extends Component {
     }
   };
 
-  googleSignIn = (e) => {
+  googleSignIn = () => {
     const { authStore } = this.props;
     gapi.load('auth2', () => {
       gapi.auth2.init({
@@ -48,7 +48,7 @@ class Home extends Component {
         <Button
           primary
           className={style.highOrder}
-          onClick={e => this.googleSignIn(e)}
+          onClick={this.googleSignIn}
         >
           Zaloguj przez Google
         </Button>
