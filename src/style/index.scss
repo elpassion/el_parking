@@ -19,3 +19,8 @@ body {
   font-weight: $light;
   color: $white;
 }
+
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
