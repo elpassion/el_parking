@@ -63,11 +63,13 @@ class AuthStore {
   }
 
   @action logout = () => {
-    gapi.auth2.getAuthInstance().disconnect(); // eslint-disable-line
     this.user = null;
     this.setToken();
     socket.disconnect();
     route('/');
+
+    gapi.auth2.getAuthInstance() // eslint-disable-line no-undef
+      .then(GoogleAuth => GoogleAuth.signOut());
   }
 }
 
