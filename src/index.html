@@ -34,7 +34,7 @@
     <%= htmlWebpackPlugin.options.ssr({
       url: '/'
     }) %>
-    <script src="https://apis.google.com/js/api:client.js" charset="utf-8"></script>
+    <script async defer src="https://apis.google.com/js/api:client.js"></script>
     <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
     <script>window.fetch||document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
   </body>

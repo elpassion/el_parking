@@ -21,20 +21,15 @@ class Home extends Component {
 
   googleSignIn = () => {
     const { authStore } = this.props;
-    gapi.load('auth2', () => {
-      gapi.auth2.init({
-        client_id: process.env.PREACT_APP_CLIENT_ID,
-        cookiepolicy: 'single_host_origin',
-      })
-      .then((auth2) => {
-        auth2.signIn()
+    gapi.auth2.getAuthInstance()
+      .then(GoogleAuth => {
+        GoogleAuth.signIn()
           .then((googleUser) => {
                 authStore.login({ access_token: googleUser.Zi.access_token });
               }, (error) => {
                 console.log(error, undefined, 2);
               });
       });
-    });
   };
 
   render () {
