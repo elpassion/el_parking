@@ -34,6 +34,7 @@ export default class App extends Component {
       gapi.auth2.init({ // eslint-disable-line no-undef
         client_id: process.env.PREACT_APP_CLIENT_ID,
         cookiepolicy: 'single_host_origin',
+        hosted_domain: process.env.PREACT_APP_OAUTH_DOMAIN,
       });
     });
   }
